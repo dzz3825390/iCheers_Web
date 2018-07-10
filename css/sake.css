@@ -265,3 +265,18 @@ body{
     margin-left: 15px;
     margin-top: 5px;
 }
+
+
+/***************首頁*****************/
+
+.sake_index_ProductDate{
+	width: 95px;
+	height: 40px;
+	float: left;
+	color: #666;
+	font-size: 9px;
+	margin-left: 5px;
+}
+
+
+/***************首頁 end*****************/
