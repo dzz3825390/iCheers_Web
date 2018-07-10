@@ -12399,6 +12399,10 @@ li.RankInfo .SoldOut {
     line-height: 17px\9;
 }
 
+.RecommendedWine h1{
+    height: 42px;
+    overflow: hidden;
+}
 
 /* IE7  */
 
@@ -12427,7 +12431,7 @@ li.RankInfo .SoldOut {
     }
 
     .RecommendedWine h1 {
-        height: 28px;
+        height: 42px;
     }
 
     .Pack_Writing button.ShoppingCart {
