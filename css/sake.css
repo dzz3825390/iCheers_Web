@@ -305,3 +305,12 @@ body{
     margin-left: 3px;
     text-align: center;
 }
+
+/**wine_list_viewed**/
+.sake_WineListViewed_Project ul li.sake_viewed_Project_Year {
+    width: 113px;
+}
+
+.WineInformation li.sake_viewed_List_Year {
+    width: 120px;
+}
