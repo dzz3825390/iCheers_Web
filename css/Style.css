@@ -11369,6 +11369,20 @@ ul.Emphasis {
     margin-left: 15px;
 }
 
+.Advanced_Order input{  
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0 5px;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.Advanced_Order input:last-child{
+    margin-left: 0;
+}
 /*20170215 Roger 新增熱門搜尋選項*/
 
 .Advanced_HotSearch{
@@ -11391,6 +11405,8 @@ ul.Emphasis {
                 margin-right: 10px;
             }
 /*20170215 Roger 新增熱門搜尋選項 end*/
+
+
 
 /*  ====================== 進階搜尋 end======================   */
 

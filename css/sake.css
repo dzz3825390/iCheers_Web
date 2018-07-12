@@ -314,3 +314,43 @@ body{
 .WineInformation li.sake_viewed_List_Year {
     width: 120px;
 }
+
+/**advanced search**/
+.sake_Advanced_HotSearch {
+    margin-top: 0;
+}
+
+.sake_Advanced_Type{
+	margin-top: 20px;
+}
+
+.sake_Advanced_Block_rice{
+	float: left;
+    height: 92px;
+    width: 380px;
+    margin-left: 16px;
+    margin-top: 0px;
+}
+
+.sake_Advanced_Block_SMV{
+	width: 380px;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.sake_Advanced_Block_SMV input{  
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0 5px;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.sake_Advanced_Block_SMV input:last-child{
+    margin-left: 0;
+}

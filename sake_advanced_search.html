@@ -340,7 +340,18 @@
                 <!--20170222 Roger 新增熱門搜尋選項-->
                 <div class="Advanced_Block"><!-- Advanced_Block-->
                     <div class="BlockLL">
-                        <div class="Advanced_Type"><!-- Advanced_Type -->
+                        <div class="Advanced_HotSearch sake_Advanced_HotSearch">
+                            <h1>▶ 熱門搜尋</h1>
+                            <ul>
+                                <li>
+                                    <input type="checkbox" name="1">快速到貨(三點前下單隔天到)
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="1">超值預訂
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Advanced_Type sake_Advanced_Type"><!-- Advanced_Type -->
                             <h1>▶ SSI四大分類</h1>
                             <ul class="Layer1" id="TypeLayer"> <!-- Layer1 -->
                                 <li><input type="checkbox" value="薰酒">薰酒</li>
@@ -349,19 +360,6 @@
                                 <li><input type="checkbox" value="醇酒">醇酒</li>
                             </ul><!-- Layer1 end-->    
                         </div><!-- Advanced_Type end-->
-                        <!--20170215 Roger 新增熱門搜尋選項-->
-                        <div class="Advanced_HotSearch">
-                            <h1>▶ 熱門搜尋</h1>
-                            <ul>
-                                <li>
-                                    <input type="radio" name="1">快速到貨(三點前下單隔天到)
-                                </li>
-                                <li>
-                                    <input type="radio" name="1">超值預訂
-                                </li>
-                            </ul>
-                        </div>
-                        <!--20170215 Roger 新增熱門搜尋選項 end-->
 
                         <div class="sake_Advanced_type">
                             <h1>▶ 類型</h1>
@@ -468,7 +466,159 @@
                     </div>
                     <div class="CLEAR"></div>
                 </div>
-
+                <div class="Advanced_Year"><!-- 精米比例  -->
+                    <h1>▶ 精米比例</h1>
+                    <span class="Advanced_Price_text">請輸入數值</span>
+                    <input name="" type="text"> 
+                    %~
+                    <input name="" type="text">
+                    %之間
+                </div>
+                <!-- 精米比例  end-->
+                <div class="Advanced_Block sake_Advanced_Block_rice"><!-- 米種-->
+                    <h1>▶ 米種</h1>
+                    <div style="position:relative; z-index:9998;margin-left:15px;">
+                        <select class="chosen" multiple="true" style="width:350px;">
+                            <!--<option selected="selected">Dojo Toolkit</option> 預設  -->
+                            <option>山田錦</option>
+                            <option>五百萬石</option>
+                            <option>雄町</option>
+                            <option>吟風</option>
+                            <option>初雫</option>
+                            <option>彗星</option>
+                            <option>古城錦</option>
+                            <option>豊盃</option>
+                            <option>華吹雪</option>
+                            <option>華想</option>
+                            <option>吟乙女</option>
+                            <option>吟銀河</option>
+                            <option>改良信交</option>
+                            <option>秋之精</option>
+                            <option>秋田酒小町</option>
+                            <option>美郷錦</option>
+                            <option>仙台坊主</option>
+                            <option>星明</option>
+                            <option>吟之精</option>
+                            <option>藏之華</option>
+                            <option>龜之尾</option>
+                            <option>羽州譽</option>
+                            <option>龜粹</option>
+                            <option>羽州華三部作</option>
+                            <option>豊國</option>
+                            <option>出羽燦燦</option>
+                            <option>出羽之里</option>
+                            <option>雪女神</option>
+                            <option>山酒4號</option>
+                            <option>酒未來</option>
+                            <option>龍之落子</option>
+                            <option>夢之香</option>
+                            <option>越淡麗</option>
+                            <option>一本〆</option>
+                            <option>白藤</option>
+                            <option>高嶺錦</option>
+                            <option>菊水</option>
+                            <option>八反錦2號</option>
+                            <option>北陸12號</option>
+                            <option>玉榮</option>
+                            <option>人心地</option>
+                            <option>夢山水</option>
+                            <option>金紋錦</option>
+                            <option>白樺錦</option>
+                            <option>雄山錦</option>
+                            <option>石川門</option>
+                            <option>九頭龍</option>
+                            <option>神力</option>
+                            <option>越之雫</option>
+                            <option>奧譽</option>
+                            <option>飛騨譽</option>
+                            <option>ひだみのり</option>
+                            <option>飛系酒61号</option>
+                            <option>譽富士</option>
+                            <option>若水</option>
+                            <option>夢山水</option>
+                            <option>夢吟香</option>
+                            <option>伊勢錦</option>
+                            <option>神之穗</option>
+                            <option>弓形穗</option>
+                            <option>日立錦</option>
+                            <option>渡船</option>
+                            <option>栃木酒14</option>
+                            <option>サケビカリ</option>
+                            <option>舞風</option>
+                            <option>酒武藏</option>
+                            <option>白目米</option>
+                            <option>總之舞</option>
+                            <option>滋賀渡舟6號</option>
+                            <option>吟吹雪</option>
+                            <option>祝</option>
+                            <option>愛山</option>
+                            <option>古之舞</option>
+                            <option>白菊</option>
+                            <option>山田穂</option>
+                            <option>新山田穂</option>
+                            <option>早大関</option>
+                            <option>辨慶</option>
+                            <option>播磨錦</option>
+                            <option>但馬強力</option>
+                            <option>野條穂</option>
+                            <option>兵庫雄町</option>
+                            <option>改良山田錦</option>
+                            <option>愛山</option>
+                            <option>なだひかり</option>
+                            <option>六甲錦</option>
+                            <option>灘錦</option>
+                            <option>兵庫夢錦</option>
+                            <option>兵庫北錦</option>
+                            <option>福之花</option>
+                            <option>兵系酒18号</option>
+                            <option>兵系酒65号</option>
+                            <option>兵系酒66号</option>
+                            <option>白鶴錦</option>
+                            <option>杜氏之夢</option>
+                            <option>露葉風</option>
+                            <option>秋津穂</option>
+                            <option>オオセト</option>
+                            <option>松山三井</option>
+                            <option>雫媛</option>
+                            <option>土佐錦</option>
+                            <option>風鳴子</option>
+                            <option>吟之夢</option>
+                            <option>幸玉</option>
+                            <option>改良雄町</option>
+                            <option>神之舞</option>
+                            <option>佐香錦</option>
+                            <option>改良八反流</option>
+                            <option>備前雄町</option>
+                            <option>八反35</option>
+                            <option>八反錦1号</option>
+                            <option>八反錦2号</option>
+                            <option>戀小町</option>
+                            <option>千本錦</option>
+                            <option>船本雄町</option>
+                            <option>比婆雄町</option>
+                            <option>廣島雄町</option>
+                            <option>強力</option>
+                            <option>穀良都</option>
+                            <option>西都之雫</option>
+                            <option>西海</option>
+                            <option>西海134號</option>
+                            <option>西海135號</option>
+                            <option>吟之里</option>
+                            <option>壽限無</option>
+                            <option>美山錦</option>
+                            <option>佐賀之華</option>
+                            <option>大分三井120号</option>
+                            <option>花神樂</option>
+                            <option>日和</option>
+                            <option>富之香</option>
+                            <option>八反草</option>
+                            <option>大瀨戶</option>
+                            <option>夢一獻</option>
+                        </select>
+                    </div>   
+                    <div class="CLEAR"></div>
+                </div>
+                <div class="CLEAR"></div>
                 <!--20170222 Roger 新增熱門搜尋選項 end-->
                 <div class="Advanced_Block" id="TypeLayer"><!-- Advanced_Block  產區、適飲溫度 -->
                     <div class="BlockLL">
@@ -1033,16 +1183,8 @@
                     </div>
                     <div class="CLEAR" ></div>
                 </div><!-- Advanced_Block 產區end-->
-                <div class="Advanced_Year"><!-- 精米比例  -->
-                    <h1>▶ 精米比例</h1>
-                    <span class="Advanced_Price_text">請輸入數值</span>
-                    <input name="" type="text"> 
-                    %~
-                    <input name="" type="text">
-                    %之間
-                </div>
-                <!-- 精米比例  end-->
-                <div class="Advanced_Order"><!-- 日本酒度 -->
+                
+                <div class="Advanced_Order sake_Advanced_Block_SMV"><!-- 日本酒度 -->
                     <h1>▶ 日本酒度</h1>
                     <span class="Advanced_Price_text">請輸入數值</span>
                     <input name="" type="text"> 
@@ -1051,6 +1193,15 @@
                     之間
                 </div>
                 <!-- 日本酒度 end-->
+                <div class="Advanced_Order"><!-- 酸度 -->
+                    <h1>▶ 酸度</h1>
+                    <span class="Advanced_Price_text">請輸入數值</span>
+                    <input name="" type="text"> 
+                    ~
+                    <input name="" type="text">
+                    之間
+                </div>
+                <!-- 酸度 end-->
                 <div class="CLEAR" ></div>
                 <div class="Advanced_Year" style="margin-top: 15px;"><!-- 酒精濃度  -->
                     <h1>▶ 酒精濃度</h1>
@@ -1061,159 +1212,15 @@
                     %之間
                 </div>
                 <!-- 酒精濃度  end-->
-                <div class="Advanced_Order" style="margin-top: 15px;"><!-- 酸度 -->
-                    <h1>▶ 酸度</h1>
+                <div class="Advanced_Order sake_Advanced_Block_AmineAcidity" style="margin-top: 15px;"><!-- 胺基酸度  -->
+                    <h1>▶ 胺基酸度</h1>
                     <span class="Advanced_Price_text">請輸入數值</span>
-                    <input name="" type="text"> 
+                    <input name="" type="text" /> 
                     ~
-                    <input name="" type="text">
+                    <input name="" type="text" />
                     之間
-                </div>
-                <!-- 酸度 end-->
+                </div><!-- 胺基酸度 end-->
                 <div class="CLEAR" ></div>
-                <div class="Advanced_Block beer_Advanced_Block_special"><!-- 米種-->
-                    <h1>▶ 米種</h1>
-                    <div style="position:relative; z-index:9998;margin-left:15px;">
-                        <select class="chosen" multiple="true" style="width:509px;">
-                            <!--<option selected="selected">Dojo Toolkit</option> 預設  -->
-                            <option>山田錦</option>
-                            <option>五百萬石</option>
-                            <option>雄町</option>
-                            <option>吟風</option>
-                            <option>初雫</option>
-                            <option>彗星</option>
-                            <option>古城錦</option>
-                            <option>豊盃</option>
-                            <option>華吹雪</option>
-                            <option>華想</option>
-                            <option>吟乙女</option>
-                            <option>吟銀河</option>
-                            <option>改良信交</option>
-                            <option>秋之精</option>
-                            <option>秋田酒小町</option>
-                            <option>美郷錦</option>
-                            <option>仙台坊主</option>
-                            <option>星明</option>
-                            <option>吟之精</option>
-                            <option>藏之華</option>
-                            <option>龜之尾</option>
-                            <option>羽州譽</option>
-                            <option>龜粹</option>
-                            <option>羽州華三部作</option>
-                            <option>豊國</option>
-                            <option>出羽燦燦</option>
-                            <option>出羽之里</option>
-                            <option>雪女神</option>
-                            <option>山酒4號</option>
-                            <option>酒未來</option>
-                            <option>龍之落子</option>
-                            <option>夢之香</option>
-                            <option>越淡麗</option>
-                            <option>一本〆</option>
-                            <option>白藤</option>
-                            <option>高嶺錦</option>
-                            <option>菊水</option>
-                            <option>八反錦2號</option>
-                            <option>北陸12號</option>
-                            <option>玉榮</option>
-                            <option>人心地</option>
-                            <option>夢山水</option>
-                            <option>金紋錦</option>
-                            <option>白樺錦</option>
-                            <option>雄山錦</option>
-                            <option>石川門</option>
-                            <option>九頭龍</option>
-                            <option>神力</option>
-                            <option>越之雫</option>
-                            <option>奧譽</option>
-                            <option>飛騨譽</option>
-                            <option>ひだみのり</option>
-                            <option>飛系酒61号</option>
-                            <option>譽富士</option>
-                            <option>若水</option>
-                            <option>夢山水</option>
-                            <option>夢吟香</option>
-                            <option>伊勢錦</option>
-                            <option>神之穗</option>
-                            <option>弓形穗</option>
-                            <option>日立錦</option>
-                            <option>渡船</option>
-                            <option>栃木酒14</option>
-                            <option>サケビカリ</option>
-                            <option>舞風</option>
-                            <option>酒武藏</option>
-                            <option>白目米</option>
-                            <option>總之舞</option>
-                            <option>滋賀渡舟6號</option>
-                            <option>吟吹雪</option>
-                            <option>祝</option>
-                            <option>愛山</option>
-                            <option>古之舞</option>
-                            <option>白菊</option>
-                            <option>山田穂</option>
-                            <option>新山田穂</option>
-                            <option>早大関</option>
-                            <option>辨慶</option>
-                            <option>播磨錦</option>
-                            <option>但馬強力</option>
-                            <option>野條穂</option>
-                            <option>兵庫雄町</option>
-                            <option>改良山田錦</option>
-                            <option>愛山</option>
-                            <option>なだひかり</option>
-                            <option>六甲錦</option>
-                            <option>灘錦</option>
-                            <option>兵庫夢錦</option>
-                            <option>兵庫北錦</option>
-                            <option>福之花</option>
-                            <option>兵系酒18号</option>
-                            <option>兵系酒65号</option>
-                            <option>兵系酒66号</option>
-                            <option>白鶴錦</option>
-                            <option>杜氏之夢</option>
-                            <option>露葉風</option>
-                            <option>秋津穂</option>
-                            <option>オオセト</option>
-                            <option>松山三井</option>
-                            <option>雫媛</option>
-                            <option>土佐錦</option>
-                            <option>風鳴子</option>
-                            <option>吟之夢</option>
-                            <option>幸玉</option>
-                            <option>改良雄町</option>
-                            <option>神之舞</option>
-                            <option>佐香錦</option>
-                            <option>改良八反流</option>
-                            <option>備前雄町</option>
-                            <option>八反35</option>
-                            <option>八反錦1号</option>
-                            <option>八反錦2号</option>
-                            <option>戀小町</option>
-                            <option>千本錦</option>
-                            <option>船本雄町</option>
-                            <option>比婆雄町</option>
-                            <option>廣島雄町</option>
-                            <option>強力</option>
-                            <option>穀良都</option>
-                            <option>西都之雫</option>
-                            <option>西海</option>
-                            <option>西海134號</option>
-                            <option>西海135號</option>
-                            <option>吟之里</option>
-                            <option>壽限無</option>
-                            <option>美山錦</option>
-                            <option>佐賀之華</option>
-                            <option>大分三井120号</option>
-                            <option>花神樂</option>
-                            <option>日和</option>
-                            <option>富之香</option>
-                            <option>八反草</option>
-                            <option>大瀨戶</option>
-                            <option>夢一獻</option>
-                        </select>
-                    </div>   
-                    <div class="CLEAR"></div>
-                </div><!-- 米種 end-->
                 <div class="Advanced_Capacity beer_Advanced_Capacity"><!-- Advanced_Capacity -->
                     <h1>▶ 容量</h1>
                     <ul style="font-size:14px; font-weight:bold;">
@@ -1223,14 +1230,7 @@
                     </ul>    
                     <div class="CLEAR"></div>
                 </div><!-- Advanced_Capacity end-->
-                <div class="Advanced_Block sake_Advanced_Block_AmineAcidity"><!-- 胺基酸度  -->
-                    <h1>▶ 胺基酸度</h1>
-                    <span class="Advanced_Price_text">請輸入數值</span>
-                    <input name="" type="text" /> 
-                    ~
-                    <input name="" type="text" />
-                    之間
-                </div><!-- 胺基酸度 end-->
+                
                 <div class="Advanced_Block"><!-- Advanced_Order -->
             	    <h1>▶ 排序方式</h1>
                     <select style="width:507px;margin-left:15px;">
