@@ -354,3 +354,14 @@ body{
 .sake_Advanced_Block_SMV input:last-child{
     margin-left: 0;
 }
+
+/*topic_b*/
+
+.sake_topicB_OneWineBox_WineStatus_ExpiredDate {
+    width: 195px;
+    height: 20px;
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+    float: right;
+}
