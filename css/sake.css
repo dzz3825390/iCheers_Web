@@ -280,3 +280,28 @@ body{
 
 
 /***************首頁 end*****************/
+
+
+/**wine_lise*/
+.sake_Sign_WineInfo_ExpiredDate {
+    font-size: 16px;
+    color: #666666;
+    float: left;
+    margin-top: 5px;
+}
+
+.sake_Sign_WineInfo_ExpiredDate span{
+	font-size: 18px; 
+	display: inline-block;
+}
+
+.Project .sake_Project_ProductDate {
+    width: 70px;
+    text-align: center;
+}
+
+.WineInformation li.sake_List_ProductDate {
+    width: 74px;
+    margin-left: 3px;
+    text-align: center;
+}
