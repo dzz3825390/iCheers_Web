@@ -5872,7 +5872,7 @@ button.InfoMore {
                 font-size: 15px;
                 line-height: 15px;
                 padding: 5px 8px;
-                width: calc(280px/26);
+                min-width: calc(280px/26);
             }
 
                 .Letter ul li a:hover {
@@ -5892,8 +5892,7 @@ button.InfoMore {
             display: block;
             float: left;
             line-height: 19px;
-            width: 19px;
-            width: calc(450px/23);
+            min-width: calc(450px/23);
             text-align: center;
             border: 1px solid #FFF;
             background-color: #E4E0DE;
