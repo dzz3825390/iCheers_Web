@@ -2097,3 +2097,27 @@ ul.personal_data_info_layout{
 /**********order_progress_wishlist end*******************/
 
 /*20170710 Rogerfix end*/
+
+/*20180731 Roger add keepaccount style*/
+
+.keepaccount{
+    display: inline-block;
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+.keepaccount span{
+    color: #666;
+    font-size: 14px;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+}
+
+/*custuon checkbox*/
+ul.member_Form li input[type=checkbox]{
+    width: auto;
+    height: auto;
+}
+
+/*20180731 Roger add keepaccount style end*/
