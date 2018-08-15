@@ -3404,7 +3404,7 @@ img.HOT8_NO {
     color: #ccc;
 }
 
-/*20161205 Roger 新增選擇器*/
+/*20180815 Roger delete margin*/
 .WineInformation li.List_SellingPrice,
 .WineryInformation li.List_SellingPrice,
 .YearInformation li.List_SellingPrice{
@@ -3414,7 +3414,7 @@ img.HOT8_NO {
     font-weight: 900;
     margin-left: 3px;
 }
-/*20161205 Roger 新增選擇器 end*/
+/*20180815 Roger delete margin end*/
 
 .ALL .WineInformation li.List_SellingPrice a,
 .ALL .WineInformation li.List_SellingPrice a:visited {
@@ -12284,6 +12284,11 @@ li.RankInfo .SoldOut {
         .WineryInformation li.List_FastIcon{
             width: 3%;
             background-position: center top;
+        }
+
+        .WineryInformation li.List_ProductDate{
+            width: 9%;
+            text-align: center;
         }
 
 
