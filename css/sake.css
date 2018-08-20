@@ -282,7 +282,7 @@ body{
 /***************首頁 end*****************/
 
 
-/**wine_lise*/
+/**wine_list*/
 .sake_Sign_WineInfo_ExpiredDate {
     font-size: 16px;
     color: #666666;
@@ -364,4 +364,13 @@ body{
     font-size: 14px;
     margin: 5px 0;
     float: right;
+}
+
+/*wine_deatil*/
+
+ul.Detail li em.Info .sake_aged{
+    margin-left: 10px;
+    font-weight: bold;
+    color: #999;
+    text-decoration: underline;
 }
