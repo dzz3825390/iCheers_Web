@@ -368,9 +368,28 @@ body{
 
 /*wine_deatil*/
 
+ul.sake_Detail li.wine_detail_wineinfo_price{
+    border-bottom: none;
+}
+
 ul.Detail li em.Info .sake_aged{
     margin-left: 10px;
-    font-weight: bold;
     color: #999;
-    text-decoration: underline;
+    font-size: 13px;
+    display: inline-block;
+    margin-top: -4px;
+    vertical-align: middle;
+    border-bottom: 1px dotted #999;
+    line-height: 13px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+
+ul.Detail li em.Info .sake_aged:after{
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: url(../images/icon/infomark.png);
+    float: right;
+    margin-left: 3px;
 }
