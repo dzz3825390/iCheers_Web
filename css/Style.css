@@ -3797,9 +3797,10 @@ margin-top: 5px;
         color: #666;
         display: inline-block;
         padding-top: 5px;
-        c overflow:hidden;
+        overflow:hidden;
         padding-bottom: 0px;
         min-height: 55px;
+        letter-spacing: -3px;
     }
 
         .WineDetail_Rank h2 img {
