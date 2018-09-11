@@ -3766,7 +3766,7 @@ margin-top: 5px;
 /*20170220 Roger 調整寬度*/
 .WineDetail_Rank{
     display: inline-block;
-    width: 182px;
+    width: 190px;
     float: left;
     background-color: #F7F7F7;
     font-family: "微軟正黑體","新細明體";
@@ -3800,7 +3800,8 @@ margin-top: 5px;
         overflow:hidden;
         padding-bottom: 0px;
         min-height: 55px;
-        letter-spacing: -3px;
+        letter-spacing: -1px;
+        float: left;
     }
 
         .WineDetail_Rank h2 img {
@@ -3827,6 +3828,9 @@ margin-top: 5px;
         margin-bottom: 0px;
         letter-spacing: 0;
         padding-right: 5px;
+        float: left;
+        margin-left: 3px;
+        margin-top: 29px;
     }
 
 .WineDetail_Award_layout{
