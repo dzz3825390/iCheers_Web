@@ -5341,6 +5341,8 @@ img.voice {
     width: 490px;
     line-height: 24px;
     color: #595757;
+    padding-right: 16px;
+    box-sizing: border-box;
 }
 
 /*20170222 Roger 移除高度設定*/
