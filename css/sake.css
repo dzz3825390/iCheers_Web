@@ -306,6 +306,22 @@ body{
     text-align: center;
 }
 
+.sake_index .Left_Menu_ClassifySearch_layout{
+    background-color: #c2c2c2;
+}
+
+.sake_index .Left_Menu_ClassifySearch_condition_layout{
+    background-color: #a1a1a1;
+}
+
+.sake_index .Left_Menu_ClassifySearch_condition_text{
+    color: #f2f2f2;
+}
+
+.sake_index .Sign_WineInfo_titleBG{
+    background-color: #b9b9b9;
+}
+
 /**wine_list_viewed**/
 .sake_WineListViewed_Project ul li.sake_viewed_Project_Year {
     width: 113px;
