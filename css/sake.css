@@ -306,6 +306,11 @@ body{
     text-align: center;
 }
 
+.WineInformation li.sake_List_ProductDate span{
+    display: inline-block;
+    margin-top: -12px;
+}
+
 .sake_index .Left_Menu_ClassifySearch_layout{
     background-color: #c2c2c2;
 }
@@ -395,12 +400,12 @@ ul.Detail li em.Info .sake_aged{
     display: inline-block;
     margin-top: -4px;
     vertical-align: middle;
-    border-bottom: 1px dotted #999;
+    /*border-bottom: 1px dotted #999;*/
     line-height: 13px;
     padding-bottom: 2px;
     cursor: pointer;
 }
-
+/*
 ul.Detail li em.Info .sake_aged:after{
     content: '';
     width: 12px;
@@ -408,4 +413,4 @@ ul.Detail li em.Info .sake_aged:after{
     background: url(../images/icon/infomark.png);
     float: right;
     margin-left: 3px;
-}
+}*/
