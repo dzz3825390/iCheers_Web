@@ -2824,30 +2824,93 @@ img.HOT8_NO {
     min-height: 70px;
     position: relative;
 }
-
+    
+    /*20190311 roger fix style*/
     .Wine_Search_List_ALL .Condition h1 {
         line-height: 24px;
         margin-left: 15px;
-        /*width: 300px;*/
+        margin-top: 8px;
         float: left;
         font-size: 15px;
     }
-
-
-    .Wine_Search_List_ALL .Condition h3 {
-        /*clear: both;*/
-        font-size: 15px;
-        line-height: 13px;
-        margin-top: 15px;
-        margin-left: 25px;
-        width: 300px;
+    
+    .Wine_Search_List_ALL .Condition h3 {        
         float: left;
+        margin-left: 10px;
+        margin-top: 12px;
     }
 
-        .Wine_Search_List_ALL .Condition h3 input {
-            margin: 0px 5px 0px 0px;
-            float: left;
-        }
+    /* Customize the label (the container) */
+    .Wine_Search_List_ALL .Condition h3 .container {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 15px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .Wine_Search_List_ALL .Condition h3 .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .Wine_Search_List_ALL .Condition h3 .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+      background-color: #fff;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .Wine_Search_List_ALL .Condition h3 .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .Wine_Search_List_ALL .Condition h3 .container input:checked ~ .checkmark {
+      background-color: #eeeeee;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .Wine_Search_List_ALL .Condition h3 .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .Wine_Search_List_ALL .Condition h3 .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .Wine_Search_List_ALL .Condition h3 .container .checkmark:after {
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid #939334;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    /*20190311 roger fix style end*/ 
 
 .Wine_Search_List_ALL .Condition h1:first-child {
     padding: 10px 0 0 0;
@@ -2884,7 +2947,6 @@ img.HOT8_NO {
     display: block;
     position: absolute;
     right: 0;
-    bottom: 0;
     padding-bottom: 5px;
     margin-right: 10px;
     font-size: 15px;
@@ -2956,7 +3018,6 @@ img.HOT8_NO {
     .Wine_Search_List_Page h2 {
         position: absolute;
         right: 5px;
-        top: 10px;
         font-size: 15px;
         padding: 0;
     }
@@ -2964,7 +3025,6 @@ img.HOT8_NO {
         .Wine_Search_List_ALL .Condition .Wine_Search_List_Page h2 {
             position: absolute;
             right: 5px;
-            top: 10px;
             padding: 0;
             margin-right: 0;
         }
