@@ -789,16 +789,18 @@ $(function(){
 			<div class="Invoice" id="Invoice2" onclick="ChangeValue('1');" >
 				<input value="1" name="FPJS" type="radio" id="two" class="textarea1" onclick="ChangeValue('2');" />
 				<label for="checkbox"></label>
-				二聯式發票 </div>
+				二聯式電子發票 </div>
 			<div id="div2" style="display: none">
 			<div class="Invoice3">
 				<h3><input name="address" type="radio" class="textarea1" id="recipient" value="old_address" checked="checked" onclick="ChangeValue('7');"/>隨商品寄出</h3>
 				<h3><input name="address" type="radio"  id="new_address" value="new_address" class="textarea1" onclick="ChangeValue('8');"/>分開寄出</h3>
                 <h3><input name="address" type="radio" class="textarea1" id="recipient" value="old_address" checked="checked"/>電子發票-手機載具
                     <input type="text" style="width: 115px;" />
+                    <span>含斜線英數共8碼，例：/RZREDHQ</span>
                 </h3>
                 <h3><input name="address" type="radio" class="textarea1" id="recipient" value="old_address" checked="checked"/>電子發票-自然人憑證載具
                     <input type="text" style="width: 80px;" />
+                    <span>含英數共16碼，例：GP00000012345678</span>
                 </h3>
 			</div>
 			<div id="divFKJS2" style="display: none">
@@ -870,7 +872,7 @@ $(function(){
 			<div class="Invoice" id="Invoice3" onclick="ChangeValue('3');">
 				<input value="3" name="FPJS" type="radio" id="three" class="textarea1" onclick="ChangeValue('2');" />
 				<label for="checkbox"></label>
-				三聯式發票</div>
+				三聯式電子發票</div>
 			<div id="div3" style="display: none">
 			<div class="Invoice2">
 				<ul>
