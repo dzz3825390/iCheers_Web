@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
+.clear{
+	clear: both;
+}
+
 /* 版型尺寸 */
 .CartALL{ clear:both; display:block; width:950px; margin:0 auto; position: relative; }
 .Cart_Border{ background-color:#fff;  width: 946px; margin:0 auto; }
@@ -2785,3 +2789,113 @@ li.Last_NoBorder,
 		display:none;
 	}
 /*20161206 Roger 新增黑底樣式 end*/
+
+.CartStep3_DeliveryInfo_others{
+	width: 100%;
+	padding: 0 54px;
+	padding-bottom: 12px; 
+	box-sizing: border-box;
+	margin-top: 12px;
+	border-bottom: 1px dotted #ccc;
+}
+
+.CartStep3_DeliveryInfo_others .row{
+	width: 100%;
+	min-height: 24px;
+	box-sizing: border-box;
+}
+
+.CartStep3_DeliveryInfo_others .row .text{
+	font-size: 13px;
+	color: #717071;
+	line-height: 24px;
+}
+
+.paperbag_extend{
+	width: 100%;
+	height: 68px;
+	margin: 12px 0;
+	box-sizing: border-box;
+}
+
+
+
+.paperbag_extend .img{
+	width: 68px;
+	height: 68px;
+	border: 1px solid #ccc;
+	padding: 4px;
+	box-sizing: border-box;
+	float: left;
+}
+
+.paperbag_extend .name{
+	height: 68px;
+	margin-left: 20px;
+	float: left;
+	display: flex;
+	align-items: center;
+}
+
+.paperbag_extend .name .name_cn{
+	width: 100%;
+	font-size: 13px;
+	color: #000;
+	line-height: 18px;
+}
+
+.paperbag_extend .name .name_en{
+	width: 100%;
+	font-size: 13px;
+	color: #999;
+	line-height: 18px;
+	margin-top: 3px;
+}
+
+.paperbag_extend .price{
+	float: left;
+	line-height: 68px;
+	margin-left: 50px;
+	font-size: 13px;
+	color: #717071;
+}
+
+.paperbag_extend .price span{
+	font-size: 20px;
+	color: #CF3448;
+	font-weight: bold;
+	margin: 0 3px;
+}
+
+.paperbag_extend .number{
+	float: left;
+	height: 68px;
+	color: #717071;
+	margin-left: 50px;
+	display: flex;
+	align-items: center;
+}
+
+.paperbag_extend .number input[type="number"]{
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #ccc;
+	text-align: center;
+	font-size: 13px;
+	color: #717071;
+	outline: none;
+}
+
+.paperbag_extend .number input[type=number]::-webkit-inner-spin-button, 
+.paperbag_extend .number input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.CartStep3_DeliveryInfo_others textarea{
+	margin-top: 12px;
+	margin-left: 36px;
+	width: 80%;
+	height: 150px;
+}

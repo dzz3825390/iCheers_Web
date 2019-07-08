@@ -11,7 +11,6 @@
 <script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 <script type="text/javascript" src="Scripts/tabs.js"/></script>
-<script type="text/javascript" src="Scripts/LeftMenu.js"></script>
 
 
 <!-- 勾選發票寄送方式顯示選項 -->
@@ -165,6 +164,30 @@ $(function(){
 			});	
 });
 </script>
+
+
+<!--
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		//包裝方式不複選
+		$('.CartStep3_DeliveryInfo_others input[name="package"]').on('click',function(){
+			var IsSelfClick = $(this).prop('clicked');
+			if (IsSelfClick == 'clicked') {
+				$(this).prop('checked',false);
+				$(this).prop('clicked','');
+			} else {
+				$('.CartStep3_DeliveryInfo_others input[name="package"]').prop('checked',false);
+				$('.CartStep3_DeliveryInfo_others input[name="package"]').prop('clicked','');
+				$(this).prop('checked',true);
+				$(this).prop('clicked','clicked');
+			}
+
+		});
+	});
+</script>
+-->
+
 </head>
 
 <!-- 詢問是否滿18歲視窗 start-->
@@ -407,7 +430,7 @@ $(function(){
 					</p>
 					<input name="winestyle" type="text" id="winestyle3" value="請輸入訂購人地址" size="75" maxlength="100" onfocus="Click_S(this)" style="margin-top:10px;" />
 					<div class="CartStep3_Delivery_notice_text" style="padding-left:0;">
-                        *離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。
+                        *離島冷藏宅配訂單將統一收取200元運費，恕無法提供滿額免運費優惠，還請見諒，謝謝！
                     </div>
 				</li>
 			</ul>
@@ -563,37 +586,54 @@ $(function(){
 				</li>
 			</ul>
 			<ul>
-				<li class="DeliveryTime">
+				<li class="DeliveryTime" style="border-bottom: none;">
 					<h1>希望配送時段：</h1>
 				</li>
-				<li class="DeliveryTime">
+				<li class="DeliveryTime" style="border-bottom: none;">
 					<!--20170808 Roger 修改-->
 					<p>
 						<input type="radio" name="Newsletter" />
-						&nbsp;08 ~ 13 時&nbsp;&nbsp;
+						&nbsp;上午(08 ~ 13 時)&nbsp;&nbsp;
 						<input type="radio" name="Newsletter" />
-						&nbsp;14 ~ 18 時&nbsp;&nbsp;
+						&nbsp;下午(14 ~ 18 時)&nbsp;&nbsp;
 						<input type="radio" name="Newsletter"/>
 						&nbsp;皆可&nbsp;&nbsp;&nbsp;
 					</p>
 					<!--20170808 Roger 修改 end-->
 				</li>
 			</ul>
-			<ul>
-                <!--20170808 Roger 修改-->
-				<li style="border:none;">
-					<h1>備註：</h1>
-				</li>
-                <li class="DataTextarea Last_NoBorder">
-                    <!--20180226 Roger 修改-->
-                    <p>國定假日及周日恕無法配送喔！提醒您，非快速到貨酒款(一般到貨)為完成付款後3-5個工作天到貨，可指定完成付款5個工作天後欲收貨日期。</p>
-                    <p>
-                    <!--20180226 Roger 修改 end-->
-                    <textarea name="note" cols="72" rows="5" style="resize:none;"></textarea>
-                    </p>
-                </li>
-                <!--20170808 Roger 修改 end-->
-			</ul>
+			<div class="CartStep3_DeliveryInfo_others">
+				<div class="row" style="padding-left: 161px;">
+					<input type="checkbox" name="package" class="checkbox">
+					<span class="text">&nbsp;&nbsp;我不介意用舊但堅固的紙箱出貨，大家一起環保護地球。</span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="CartStep3_DeliveryInfo_others" style="border-bottom: none;">
+				<div class="paperbag_extend">
+					<div class="img">
+						<div style="width: 58px;height: 58px;background-color: #333;"></div>
+					</div>
+					<div class="name">
+						<div>
+							<div class="name_cn">加購iCheers愛酒窩提袋(單入)</div>
+							<div class="name_en">iCheers Paper Wine Bag (for single bottle)</div>
+						</div>
+					</div>
+					<div class="price">
+						$<span>15</span>/個
+					</div>
+					<div class="number">
+						<input type="number" name="paperbag_number" style="margin-right: 5px;">個				
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="row" style="margin-top: 20px;">
+					<div class="text" style="display: inline-block;vertical-align: top;">備註：</div><div class="text" style="display: inline-block;">國定假日及周日恕無法配送喔！提醒您，非快速到貨酒款(一般到貨)為完成付款後3-5個工作天到貨，<br/>可指定完成付款5個工作天後欲收貨日期。</div>
+				</div>
+				<textarea name="note" cols="72" rows="5" style="resize:none;"></textarea>
+			</div>
+
 			<div class="clear"></div>
 		</div>
 		<!-- 商品配送 end --> 
@@ -640,6 +680,13 @@ $(function(){
 				<li class="ordercart_data_info"><span >$ 0</span> </li>
 				<li class="ordercart_data_info"><a href="#" class="btn_bonus">iCheers特惠免運費</a></li>		
              </ul>
+             <div class="ordercart_data_de"></div>
+             <!--沒有提袋就不顯示-->
+             <ul class="ordercart_data_all">
+				<li class="ordercart_data_title"><span  >  icheers愛酒窩提袋：</span></li>
+				<li class="ordercart_data_info"><span >$ 60</span> </li>	
+             </ul> 
+             <!--沒有提袋就不顯示-->
 			     <ul>
              	<li class="FreightNotches2" id="FreightNotches">
                  	<table width="300" border="0" cellspacing="1">
