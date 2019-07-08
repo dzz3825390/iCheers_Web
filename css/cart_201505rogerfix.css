@@ -2829,6 +2829,36 @@ li.Last_NoBorder,
 	float: left;
 }
 
+.paperbag_extend .img > div{
+	width: 58px;
+	height: 58px;
+	background-image: url(../images/pic/paperbag_s.jpg);
+	background-size: cover;
+	cursor: pointer;
+	position: relative;
+}
+
+.paperbag_extend .img > div:before{
+	content: '₊';
+	display: block;
+	color: #fff;
+	font-size: 80px;
+	text-align: center;
+	line-height: 30px;
+	width: 58px;
+	height: 58px;
+	background-color: #333;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.paperbag_extend .img > div:hover:before{
+	opacity: 0.3;
+}
+
 .paperbag_extend .name{
 	height: 68px;
 	margin-left: 20px;

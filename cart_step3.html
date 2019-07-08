@@ -11,6 +11,7 @@
 <script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 <script type="text/javascript" src="Scripts/tabs.js"/></script>
+<script type="text/javascript" src="Scripts/LightBox.js"></script>
 
 
 <!-- 勾選發票寄送方式顯示選項 -->
@@ -189,6 +190,13 @@ $(function(){
 -->
 
 </head>
+
+<div class="Label_LightBox" id="Label_LightBox">
+    <div style="position:relative;">
+        <img src="images/pic/paperbag.jpg" />
+        <div class="OFF"></div>
+    </div>
+</div>
 
 <!-- 詢問是否滿18歲視窗 start-->
 <div id="notice8" class="notice_BG" style="width:450px;min-height:220px;">  
@@ -611,8 +619,8 @@ $(function(){
 			<div class="clear"></div>
 			<div class="CartStep3_DeliveryInfo_others" style="border-bottom: none;">
 				<div class="paperbag_extend">
-					<div class="img">
-						<div style="width: 58px;height: 58px;background-color: #333;"></div>
+					<div class="img Label">
+						<div></div>
 					</div>
 					<div class="name">
 						<div>
