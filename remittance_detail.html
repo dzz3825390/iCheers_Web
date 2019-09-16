@@ -8,21 +8,37 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link rel="stylesheet" type="text/css" href="css/cart.css"/>
 <script type="text/javascript" src="Scripts/tabs.js"/></script>
+<script type="text/javascript">
+	
+window.onload = function() {
 
+	for (i=0; i<60; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			var option_text = document.createTextNode('0'+i);
+		} else {
+			var option_text = document.createTextNode(i);
+		}
+		
+		option.appendChild(option_text);
+		document.getElementById("payment_minute").appendChild(option);
+	}
 
+	for (i=0; i<24; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			var option_text = document.createTextNode('0'+i);
+		} else {
+			var option_text = document.createTextNode(i);
+		};
+		option.appendChild(option_text);
+		document.getElementById("payment_hour").appendChild(option);
+	}
 
-
-
-<!-- 點擊輸入框清除提示文字 -->
-<script language="JavaScript" type="text/javascript">
-function Click_S(form){
-	var obj=form; 
-    if (obj.id=="name"){ obj.value=""; }  
-	if (obj.id=="phone"){ obj.value=""; }
-	if (obj.id=="number"){ obj.value=""; }
 }
-</script>
 
+
+</script>
 </head>
 
 <body>
@@ -51,7 +67,7 @@ function Click_S(form){
 	<div class="CartALL"> 
 		
 		<!-- 訂購人基本 start -->
-		<div class="cart_data">
+		<div class="cart_data cart_paymentinfo">
 			<h5>匯款資訊填寫</h5>
 			<div class="clear"></div>
             <ul>
@@ -61,7 +77,7 @@ function Click_S(form){
             <!-- 訂單資訊 -->
             <ul>
 				<li><h1><span class="redword">*</span>匯款人姓名：</h1></li>
-				<li><p><input name="name" type="text" class="textarea1" id="name" value="請輸入姓名" size="30" maxlength="50"  onfocus="Click_S(this)" /></p></li>
+				<li><p><input name="name" type="text" class="textarea1" id="name" placeholder="請輸入姓名" size="30" maxlength="50" /></p></li>
 			</ul>
             <!-- 匯款人姓名 -->
 			<ul>
@@ -70,22 +86,44 @@ function Click_S(form){
 				</li>
 				<li>
 					<p>
-						<input name="phone" type="text" class="textarea1" id="phone" value="請輸入銀行名稱" size="30" maxlength="50"  onfocus="Click_S(this)" />
+						<input name="phone" type="text" class="textarea1" id="phone" placeholder="請輸入銀行名稱" size="30" maxlength="50"  />
 					</p>
 				</li>
 			</ul>
             <!-- 銀行名稱 -->
 			<ul>
 				<li>
-					<h1><span class="redword">*</span>帳號後五碼：</h1>
+					<h1>匯款時間：</h1>
 				</li>
 				<li>
 					<p>
-						<input name="number" type="text" class="textarea1" id="number" value="請輸入匯款帳號最後五碼數字" size="30" maxlength="50"  onfocus="Click_S(this)" />
+						<input name="date" type="date" class="textarea1" style="width: 120px;" />
+						<select style="margin-left: 10px;" id="payment_hour">
+							
+						</select>
+						<span class="radio_text">時</span>
+						<select id="payment_minute">
+							
+						</select>
+						<span class="radio_text">分</span>
 					</p>
 				</li>
 			</ul>
-            <!-- 帳號後五碼 -->
+            <ul>
+				<li>
+					<h1 title="「轉帳」請務必提供後5碼，以利核帳。 到銀行櫃台存款沒有後5碼，則選擇「臨櫃存現」即可"><span class="redword">*</span><span class="tooltips">匯款方式</span>：</h1>
+				</li>
+				<li>
+					<p>
+						<input name="payment" type="radio" checked="checked" class="textarea1" />
+						<span class="radio_text">轉帳</span>
+						<input name="accountnumber" type="text" style="width: 120px;" placeholder="請輸入帳號末五碼" maxlength="10" id="number" />
+						<input name="payment" type="radio" class="textarea1" style="margin-left: 10px;" />
+						<span class="radio_text">臨櫃存現</span>
+					</p>
+				</li>
+			</ul>
+
             <ul>
 				<li style=" border-bottom:none; padding-top:0px; height:20px;"><h1>匯款資訊：</h1></li>
 				<li style=" border-bottom:none; padding-top:0px; height:20px;"><p>銀行／玉山銀行（代號808），永和分行</p></li>
