@@ -397,7 +397,7 @@ ul.MarginMore {
 
 .memberIndexRR {
     display: inline-block;
-    width: 280px;
+    width: 340px;
     height: 600px;
     position: absolute;
     right: 20px;
@@ -407,7 +407,7 @@ ul.MarginMore {
 
 .ChangeData{
     display: inline-block;
-    width: 277px;
+    width: 337px;
     height: 50px;
     background-position: top left;
     background-image: url(../images/ChangeData.png);
@@ -443,32 +443,65 @@ ul.MarginMore {
     color: #231815;
     font-size: 13px;
     display: inline-block;
-    width: 279px;
-    height: 368px;
+    width: 339px;
+    height: 400px;
     background-image: url(../images/MemberInformationBG.jpg);
 }
 
     .MemberInformation h1 {
-        font-size: 13px;
-        line-height: 20px;
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
         display: inline-block;
-        width: 216px;
-        height: 41px;
-        background-image: url(../images/Dialog.png);
-        background-repeat: no-repeat;
+        width: 276px;
+        height: 50px;
+        /*background-image: url(../images/Dialog2.png);
+        background-repeat: no-repeat;*/
+        background-color: #fff;
+        border-radius: 50px;
         padding: 12px 0px 10px 27px;
-        margin: 10px 0px 0px 15px;
+        margin: 20px 0px 0px 17px;
+        box-shadow: -2px 5px 0 rgba(200,200,200,1);
+    }
+
+    .MemberInformation h1:after{
+        content:'';
+        width: 45px;
+        height: 45px;
+        background: url(../images/Dialog.svg);
+        background-size: cover;
+        display: block;
+        position: absolute;
+        top: 9px;
+        right: 15px;
+    }
+
+    .MemberInformation h1 span{
+        font-weight: bold;
+        color: #C29C20;
     }
 
 
     .MemberInformation h2 {
-        font-size: 13px;
+        position: relative;
+        width: 82%;
+        font-size: 16px;
         display: inline-block;
         padding-left: 15px;
-        background-image: url(../images/MaruListStyle.png);
-        background-repeat: no-repeat;
-        line-height: 20px;
-        margin: 10px 0px 10px 20px;
+        line-height: 24px;
+        margin: 15px 0px 10px 20px;
+    }
+
+    .MemberInformation h2:before{
+        position: absolute;
+        content: '';
+        width: 5px;
+        height: 5px;
+        display: block;
+        border-radius: 50%;
+        background-color: #666;
+        left: 1px;
+        top: 9px;
     }
 
         .MemberInformation h2 em {
@@ -478,14 +511,13 @@ ul.MarginMore {
 
 
 .Sommelier {
-    position: absolute;
+    position: relative;
     display: inline-block;
     width: 263px;
     height: 263px;
     background-image: url(../images/Sommelier.png);
-    left: 40px;
-    top: 200px;
-    z-index: 9;
+    margin-top: 26px;
+    margin-left: 107px;
 }
 
 .MemberInformationIcon {
@@ -494,9 +526,12 @@ ul.MarginMore {
     width: 130px;
     height: 132px;
     background-image: url(../images/MemberInformationIcon.png);
-    left: 62px;
-    top: 322px;
-    z-index: 10;
+    top: 122px;
+}
+
+.MemberInformationNotice{
+    margin: 3px 0px 10px 25px;
+    color: #666;
 }
 
 .LINE2 {
@@ -543,7 +578,7 @@ ul.MarginMore {
 
 .memberIndexLL {
     display: inline-block;
-    width: 830px;
+    width: 770px;
     height: 600px;
     position: absolute;
     left: 20px;
