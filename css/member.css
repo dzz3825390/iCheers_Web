@@ -38,7 +38,7 @@
 
 .member_Center {
     display: block;
-    min-height: 600px;
+    min-height: 650px;
     margin: 0 53px;
     background-repeat: repeat-y;
     border: 1px solid #ECECEC;
@@ -398,7 +398,7 @@ ul.MarginMore {
 .memberIndexRR {
     display: inline-block;
     width: 340px;
-    height: 600px;
+    height: 700px;
     position: absolute;
     right: 20px;
     top: 35px;
@@ -455,8 +455,6 @@ ul.MarginMore {
         display: inline-block;
         width: 276px;
         height: 50px;
-        /*background-image: url(../images/Dialog2.png);
-        background-repeat: no-repeat;*/
         background-color: #fff;
         border-radius: 50px;
         padding: 12px 0px 10px 27px;
@@ -464,7 +462,7 @@ ul.MarginMore {
         box-shadow: -2px 5px 0 rgba(200,200,200,1);
     }
 
-    .MemberInformation h1:after{
+    .MemberInformation h1.glass_icon:after{
         content:'';
         width: 45px;
         height: 45px;
@@ -481,6 +479,11 @@ ul.MarginMore {
         color: #C29C20;
     }
 
+    .MemberInformation h1 strong{
+        font-weight: bold;
+        color: #333;
+    }
+
 
     .MemberInformation h2 {
         position: relative;
@@ -492,7 +495,20 @@ ul.MarginMore {
         margin: 15px 0px 10px 20px;
     }
 
-    .MemberInformation h2:before{
+    .MemberInformation h2 span{
+        font-weight: bold;
+        color: #C29C20;
+    }
+
+    .MemberInformation h2 div{
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    .MemberInformation h2:before,.MemberInformation h3:before{
         position: absolute;
         content: '';
         width: 5px;
@@ -502,6 +518,68 @@ ul.MarginMore {
         background-color: #666;
         left: 1px;
         top: 9px;
+    }
+
+    .MemberInformation h3 {
+        position: relative;
+        width: 82%;
+        font-size: 16px;
+        display: inline-block;
+        padding-left: 15px;
+        line-height: 24px;
+        color: #333;
+        font-weight: bold;
+        margin: 15px 0px 10px 20px;
+    }
+
+    .MemberInformation h3 div{
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    .MemberInformation h3 div span{
+        font-weight: bold;
+        color: #C29C20;
+    }
+
+    .MemberInformation h3 div strong{
+        font-weight: bold;
+        color: #75526F;
+    }
+
+    .MemberInformation h4 {
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        display: inline-block;
+        width: 296px;
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 12px 10px 10px 20px;
+        margin: 5px 0px 15px 17px;
+        box-shadow: -2px 5px 0 rgba(200,200,200,1);
+        box-sizing: border-box;
+    }
+
+    .MemberInformation h4 span{
+        font-weight: bold;
+        color: #C29C20;
+    }
+
+    .MemberInformation h4 strong{
+        font-weight: bold;
+        color: #75526F;
+    }
+
+    .MemberInformation h4 div{
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        font-weight: normal;
+        margin-top: 3px;
     }
 
         .MemberInformation h2 em {
@@ -532,6 +610,14 @@ ul.MarginMore {
 .MemberInformationNotice{
     margin: 3px 0px 10px 25px;
     color: #666;
+}
+
+.MemberInformationNotice:before{
+    content: '*';
+    display: block;
+    float: left;
+    margin-top: 3px;
+    margin-right: 2px;
 }
 
 .LINE2 {
@@ -579,7 +665,7 @@ ul.MarginMore {
 .memberIndexLL {
     display: inline-block;
     width: 770px;
-    height: 600px;
+    height: 700px;
     position: absolute;
     left: 20px;
     top: 35px;
