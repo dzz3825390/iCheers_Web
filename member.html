@@ -31,7 +31,16 @@
 
     </script>
 
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
 
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+		})
+	</script>
 
 </head>
 
