@@ -8512,11 +8512,11 @@ ul.Bottlee_Wine h3 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     margin-top: 5px;
-    line-height: 1.2;
+    line-height: 1.4;
+    max-height: 35px;
+    overflow: hidden;
 }
 
-ul.Bottlee_Wine a h3 {
-}
 
 ul.Bottlee_Wine h5,
 ul.Pack_Wine_center h4 {
