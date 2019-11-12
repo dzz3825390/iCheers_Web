@@ -1308,9 +1308,7 @@ li.FreightNotches2 table tr th{
 /*--------------------------------------------------------- 彈跳視窗 START ---------------------------------------------------------*/
 
 
-/********************201608 Roger 重製notice系列視窗*********************/
 
-/*20161212 Roger 新增z-index*/
 .notice_BG{
 	background-color: #fff;
 	-webkit-border-radius: 5px;
@@ -1322,20 +1320,21 @@ li.FreightNotches2 table tr th{
 	z-index:999999;
 }
 
-/*20161212 Roger 新增z-index end*/
-
-/*20161206 Roger 新增樣式*/
 .notice_BG div:focus{
 	outline: none;
 }
-/*20161206 Roger 新增樣式 end*/
 
+/*20191112 Roger fix*/
 .notice_title_layout{
 	width: 100%;
 	height: 40px;
 	background-color: #666666;
 	border-radius: 4px 4px 0 0;
+	position: relative;
+	padding: 0 40px;
+	box-sizing: border-box;
 }
+/*20191112 Roger fix end*/
 
 .notice_title{
 	font-size: 22px;
@@ -1345,14 +1344,16 @@ li.FreightNotches2 table tr th{
 	text-align: center;
 }
 
+/*20191112 Roger fix*/
 .notice_title_closeBTN{
 	width: 20px;
 	height: 20px;
 	background-image: url(../images/icon/btn_close.png);
-	float: right;
-	margin-top: -30px;
-	margin-right: 10px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
+/*20191112 Roger fix end*/
 
 .notice_title_closeBTN:hover{
 	cursor: pointer;
@@ -1377,8 +1378,6 @@ li.FreightNotches2 table tr th{
 		margin: 0 3px;
 	}
 
-	/*20170808 Rogerfix*/
-
 	.notice_body p em{
 		display: inline-block;
 		vertical-align: super;
@@ -1392,7 +1391,6 @@ li.FreightNotches2 table tr th{
 		font-size: 15px;
 		text-shadow: 0 0 0 rgba(0,0,0,.8);
 	}
-	/*20170808 Rogerfix end*/
 
 .notice_body_input_layout{
 	width: 100%;
@@ -1472,7 +1470,7 @@ li.FreightNotches2 table tr th{
 	background-image: url(../images/icon/btn_confirm2.png);
 }
 
-/*20170808 Roger新增*/
+
 .notice_IseeBTN{
 	width: 100px;
 	height: 41px;
@@ -1484,7 +1482,7 @@ li.FreightNotches2 table tr th{
 	cursor: pointer;
 	background-image: url(../images/icon/btn_Isee2.png);
 }
-/*20170808 Roger新增 end*/
+
 
 /*notice 輸入email視窗*/
 
@@ -1616,7 +1614,6 @@ li.FreightNotches2 table tr th{
 /*notice8 18歲詢問 end*/
 
 
-/*********************201608 Roger 重製notice系列視窗 end*****************/
 
 /*--------------------------------------------------------- 彈跳視窗 END ---------------------------------------------------------*/
 
