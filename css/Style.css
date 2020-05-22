@@ -4669,7 +4669,7 @@ h5.Focus {
 
 ul.Detail {
     display: block;
-    width: 565px;
+    width: 585px;
     float: left;
     font-size: 16px;
     margin-top: 10px;
@@ -4861,7 +4861,35 @@ ul.Detail {
     vertical-align: super;
     margin-left: 20px;
 }
+
+.wine_detail_wineinfo_inventory.fast{
+    text-decoration: underline;
+    cursor: pointer;
+}
 /*20161202 Roger 修改樣式 end*/
+
+.wine_detail_wineinfo_inventory .infomark{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px #cccccc solid;
+    font-size: 7px;
+    margin-left: 5px;
+    line-height: 20px;
+    text-align: center;
+    position: relative;
+    top: 3px;
+}
+
+.wine_detail_wineinfo_inventory .infomark:after{
+    display: inline-block;
+    content: '?';
+    color: #666;
+    position: absolute;
+    left: 4px;
+    top: -2px;
+}
 
 #Price > div span{
     display: inline-block;
