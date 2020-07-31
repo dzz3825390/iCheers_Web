@@ -9,14 +9,13 @@
 <link href="css/contents.css" rel="stylesheet" type="text/css">
 <link href="Scripts/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/beer.css">
-<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
 
 <!-- 拆掉 LeftMenu.js -->
 <script type="text/javascript" src="Scripts/ChangeTag.js"></script> <!-- 換館別 -->
-<script type="text/javascript" src="Scripts/index.js"></script> <!-- 首頁輪撥 -->
 <script type="text/javascript" src="Scripts/WineLeftMenu.js"></script> <!-- 紅酒館的分類找酒 -->
 <script type="text/javascript" src="Scripts/ddsmoothmenu.js"></script> <!-- 上選單 -->
 <script type="text/javascript" src="Scripts/ShoppingCart.js"/></script> <!-- 浮動購物車 -->
@@ -60,18 +59,79 @@ ddsmoothmenu.init({
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 
+$(document).ready(function(){
+    //footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
+});
+
 </script>
+
 <script type="text/javascript">
-	$(function () {
-            $('div.readmore').expander({
+    $(document).ready(function(){
+        $('div.readmore').expander({
                 slicePoint: 300,
                 expandText: '展開▼',
                 userCollapseText: '收合▲'
             });
-        });
-</script>
 
-	
+        //分類找酒文字縮排設定
+        $(".Left_Menu_ClassifySearch_condition_text").children().each(function(){
+            var NthChild = $(this).index();
+            var OptionMarginLeft = 15*NthChild;
+            $(this).css("margin-left",OptionMarginLeft);
+        });
+
+        //簡目頁內容獎牌/評分欄位置中設定
+        $(".List_Award a").each(function(){
+            var AwardWidth = $(this).width();
+            var AwardPositionX = (71 - AwardWidth) / 2;
+            $(this).css("margin-left",AwardPositionX);
+        });
+
+        //簡目頁內容折扣/省最多置中設定
+        $(".List_Discount").each(function(){
+            var Discount = $(this)
+            var Save = $(this).next();
+            var HasDiscount = $(this)[0].hasChildNodes();
+            var HasSave = $(this).next()[0].hasChildNodes();
+            if (HasDiscount){
+                if (HasSave == false){
+                    Save.css("display","none");
+                    Discount.css({
+                        "width":99,
+                        "text-align":"center"
+                    });
+                }
+            } else{
+                if (HasSave){
+                    Discount.css("display","none");
+                    Save.css({
+                        "width":99,
+                    });
+                }
+            }
+        });
+
+        //footermenu置中
+        var FooterMenuWidth = $('.FooterMenu').width();
+        var FooterWidth = $('.FooterMenu').parent().width();
+        var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+        $('.FooterMenu').css('margin-left',FooterPositionX);
+
+        //active按鈕
+        $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
+        });
+        
+
+
+    });  
+</script>
 
 
 
@@ -81,12 +141,13 @@ ddsmoothmenu.init({
 <body class="beer_index">
 <div class="HeadALL">
     <div class="HeadMenu">
-        <a href="" class="HeadMenuLogin">會員登入</a>
-        <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        <!--<a href="" class="BuyALot">諮詢服務</a>-->
-        <!-- <a href="" class="NextDrink">下次再喝</a> -->
-        <a href="" class="MyList">我的清單</a>
-        <!--<a id="language_en" style="cursor:pointer;">English</a>-->
+        <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
     <div class="TagALL beer_TagALL">
         <ul>
@@ -1357,7 +1418,6 @@ ddsmoothmenu.init({
                             <div class="Sign_WineInfo_Award Award3">
                                 <span class="AwardName">RVF</span><span class="AwardNO">品種賞</span>
                             </div>
-                            <div class="Sign_WineInfo_24HRexpress_icon"></div>
                             <div class="CLEAR"></div>
                             <div class="Sign_WineInfo_capacity">355ml</div>
                             <div class="Sign_WineInfo_year">2012</div>
@@ -1391,9 +1451,8 @@ ddsmoothmenu.init({
                             <div class="Sign_WineInfo_text_ChineseName">酷啤酒共和國 醉後水手</div>
                             <div class="Sign_WineInfo_text_EnglishName">Crew Republic, DrunkenSailor</div>
                             <div class="Sign_WineInfo_Award Award1">
-                                <img src="images/Award/decanterStar.png" class="decanterStar">
+                                <img src="images/Award/AW25.jpg" class="decanterStar">
                             </div>
-                            <div class="Sign_WineInfo_24HRexpress_icon"></div>
                             <div class="CLEAR"></div>
                             <div class="Sign_WineInfo_capacity">355ml</div>
                             <div class="Sign_WineInfo_year">2012</div>
@@ -1434,8 +1493,14 @@ ddsmoothmenu.init({
                 </div>
             </div>    
             <div class="Condition">
+                <h3>
+                    <label class="container">
+                      排除無庫存品項  
+                      <input type="checkbox" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                </h3>
                 <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒廠</a>排列</h1>
-                <h3><input name="" type="checkbox" value="">我只想看有庫存的品項</h3>
                 <div class="Wine_Search_List_Page">
                     <h2>
                         <a href="">&lt;&lt; 最前頁</a>
@@ -1470,6 +1535,7 @@ ddsmoothmenu.init({
                         <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                         <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <!--<div class="tracking"></div>-->
                         <h3>
                             <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                         </h3>
@@ -1539,6 +1605,7 @@ ddsmoothmenu.init({
                         <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                         <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <!--<div class="tracking"></div>-->
                         <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1619,6 +1686,7 @@ ddsmoothmenu.init({
                         <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                         <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <!--<div class="tracking"></div>-->
                         <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1664,6 +1732,7 @@ ddsmoothmenu.init({
                         <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                         <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <!--<div class="tracking"></div>-->
                         <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1731,13 +1800,16 @@ ddsmoothmenu.init({
 
 
 <div class="FooterALL" >
-	<div class="Footer_position">
+    <div class="Footer_position">
+        <!--201803 Roger 新增手機板連結-->
         <ul class="FooterMenu">
             <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
             <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
             <li><a href="" target="_parent">條款及細則</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
         </ul>
+        <!--201803 Roger 新增手機板連結 end-->
         <div class="FooterICON">
            <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>
            <button class="Join"></button>

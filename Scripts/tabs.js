@@ -48,6 +48,7 @@ function PopLocate(name){
 	}
 	//20161223 Roger 修改js 讓寬度小於1280的載具顯示正常 end
 
+
 }	
 
 

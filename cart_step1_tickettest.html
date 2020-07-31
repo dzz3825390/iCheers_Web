@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link rel="stylesheet" type="text/css" href="css/cart_201505rogerfix.css"/>
 <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
-<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 <script type="text/javascript" src="Scripts/tabs.js"/></script>
 <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
@@ -52,6 +52,13 @@ $(function(){
 	}).find('a').focus(function(){
 			this.blur();
 	});
+
+    //footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
 });
 </script>
 <!--總計(含加購商品)高度設定-->
@@ -120,6 +127,105 @@ $(document).ready(function(){
     } else {
     	
     }
+
+    //左側按鈕文字置中
+    $(".CartOptionBox .OneOption").each(function(){
+        var TextHeight = $(this).children().height();
+        var TextMarginTop = (65 - TextHeight)/2;
+        $(this).children().css('margin-top',TextMarginTop);
+    });
+
+    //checkbox點擊左側按鈕樣式調整
+    $('.CartList_ItemCheckbox_position[type="checkbox"]').click(function(){
+        var IsChecked = false;
+        var CheckboxCount = $('.CartList_ItemCheckbox_position[type="checkbox"]').length;
+        var CheckedCount = $('.CartList_ItemCheckbox_position[type="checkbox"]:checked').length;
+        //選取數等於全選
+        if (CheckedCount == CheckboxCount){
+            $('#Btn_Choseall').removeClass('active');
+            $('#Btn_Traceall, #Btn_Deleteall').addClass('active');
+            $('#Btn_Choseall span').text('取消全選');
+            $('#Btn_Choseall').addClass('Btn_Cancelall');
+        }
+        //沒有全部選取
+        else {
+            $('#Btn_Choseall span').text('選擇全部');
+            $('#Btn_Choseall').removeClass ('Btn_Cancelall');
+            for (i=0;i<CheckboxCount;i++) {
+                if($('.CartList_ItemCheckbox_position[type="checkbox"]').eq(i).prop('checked')) {
+                    IsChecked = true;
+                    break;
+                } else {
+                    IsChecked = false;
+                }
+            }
+
+            if (IsChecked) {
+                $('#Btn_Choseall').removeClass('active');
+                $('#Btn_Traceall, #Btn_Deleteall').addClass('active');
+
+            } else {
+                $('#Btn_Choseall').addClass('active');
+                $('#Btn_Traceall, #Btn_Deleteall').removeClass('active');
+            }
+        }
+        
+
+
+        
+        
+
+    });
+
+    //全選/取消全選
+    $('#Btn_Choseall').click(function(){
+        var CheckboxCount = $('.CartList_ItemCheckbox_position[type="checkbox"]').length;
+        var CheckedCount = $('.CartList_ItemCheckbox_position[type="checkbox"]:checked').length;
+        //取消全選
+        if (CheckedCount == CheckboxCount){
+            $('.CartList_ItemCheckbox_position[type="checkbox"]').each(function(){
+                $(this).prop("checked", false);
+            });
+            $('#Btn_Choseall').addClass('active');
+            $('#Btn_Traceall, #Btn_Deleteall').removeClass('active');
+            $('#Btn_Choseall span').text('選擇全部');
+        }
+        //全選
+        else {
+            $('.CartList_ItemCheckbox_position[type="checkbox"]').each(function(){
+                $(this).prop("checked", true);
+            });
+            $('#Btn_Choseall').removeClass('active');
+            $('#Btn_Traceall, #Btn_Deleteall').addClass('active');
+            $('#Btn_Choseall span').text('取消全選');
+        }
+        
+    });
+
+    //刪除品項視窗觸發
+    $('#Btn_Deleteall').click(function(){
+        if($(this).hasClass('active')){
+            Pops('#notice_DeleteWine');
+        }
+    });
+
+    //scroll event 超過小計時隱藏整批操作按鈕
+    var timer
+    var CartListHeight = 0;
+    CartListHeight = $('.CartALL').outerHeight(true) - $('.Sum_border').outerHeight(true) - $('.above18Proclaim').outerHeight(true) - $('.BTN_CONSULT').outerHeight(true) - $('.CartAddItem').outerHeight(true) - $('.CartGift').outerHeight(true) + 100;
+
+    $(window).scroll(function(){
+        window.clearTimeout(timer)
+
+        timer = window.setTimeout(function() {
+            var NowScrollTop = $(window).scrollTop();
+            if (NowScrollTop > CartListHeight) {
+                $('.CartOptionBox').fadeOut();
+            } else {
+                $('.CartOptionBox').fadeIn();
+            }
+        }, 50)
+    })
 });
 </script>
 <!--20161228 Roger新增 只有加價購時間距處理 end-->
@@ -129,18 +235,18 @@ $(document).ready(function(){
 <body>
 <div class="HeadALL">
     <div class="HeadMenu">
-            <!--a href="" class="LogOut">會員登出</a-->
-            <a href="" class="HeadMenuLogin">會員登入</a>
+        <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
             <a href="" class="Reconfirmed">沒有收到確認信?</a>
             <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
             <!--span class="AccountNumber">ich***, 您好</span-->
-        </div>
+    </div>
     <div class="TagALL_Buy">
     	<ul>
         	<li class="TagLogo"><a href="index.html"></a></li>
-        	<!--20161206 Roger 修改img寬度-->
             <li class="Process"> <img src="images/Step1.png" height="53" width="900" /></li>
-            <!--20161206 Roger 修改img寬度 end-->
         </ul>
     </div>
     
@@ -155,7 +261,13 @@ $(document).ready(function(){
 
 	<!-- 版型控制 start --> 
 	<div class="CartALL">
-
+        <!--批次操作按鈕-->
+        <div class="CartOptionBox">
+            <div class="OneOption active" id="Btn_Choseall"><span>選擇全部</span></div>
+            <div class="OneOption" id="Btn_Traceall"><span>整批放入<br/>追蹤酒款</span></div>
+            <div class="OneOption" id="Btn_Deleteall"><span>整批刪除</span></div>
+        </div>
+        <!--批次操作按鈕 end-->
 		
 		<!-- 清單外框 start -->
 		<div class="Cart_Border"> 
@@ -171,12 +283,11 @@ $(document).ready(function(){
 				<!-- 表頭 -->
 				<ul class="CartList_Title">
 					<li class="CartList_Checkbox"><a href=""></a></li>
-
-					<li class="CartList_Name"><a href=""></a></li>
-					<li class="CartList_Price"><a href=""></a></li>
-					<li class="CartList_Amount"><a href=""></a></li>
-					<li class="CartList_Sum"><a href=""></a></li>
-					<li class="CartList_Del"><a href=""></a></li>
+                    <li class="CartList_Name"><a href=""></a></li>
+                    <li class="CartList_Capacity"><a href=""></a></li>
+                    <li class="CartList_Price"><a href=""></a></li>
+                    <li class="CartList_Amount"><a href=""></a></li>
+                    <li class="CartList_Sum"><a href=""></a></li>
 				</ul>
 				<div class="CLEAR"></div>	
 				
@@ -191,21 +302,18 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#">西班牙國寶Palacios品酒會</a></p>
 
-						</li>                    
+						</li>
+                        <li class="CartList_ItemCapacity">
+                            
+                        </li>                      
 						<li class="CartList_ItemPrice">
 	                     $<strike>1,300</strike><br />
 						 $<span class="RED16">1,250</span><br />
 	                    </li>					
 						<li class="CartList_ItemAmount">
 							<input type="text" class="textarea2" value="1" size="2" maxlength="3" onchange="Pops('#notice11')" />
-							<br/>
 							張</li>
 						<li class="CartList_ItemSum">$<span class="RED16">1,250</span></li>
-						<li class="CartList_ItemDel">
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
-	                    </li>
 						
 						<div class="clear"></div>
 					</ul>
@@ -511,6 +619,25 @@ $(document).ready(function(){
     </div>
    	<!-- 贈品數量不符 end -->
 	<!--20170814 Roger 新增 end-->
+
+    <!--刪除品項確認視窗-->
+    <div id="notice_DeleteWine" class="notice_BG" style="width:450px;min-height:200px;">
+        <div class="notice_title_layout">
+            <div class="notice_title">刪除品項</div>
+            <div class="notice_title_closeBTN" onclick="Wops('notice_DeleteWine')"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div id="notice_body" class="notice_body">
+            <p>品項刪除後將無法復原，如果希望日後方便查詢，<br/>
+建議可將刪除的品項加入追蹤酒款。</p>
+            <div class="notice_btn_row">
+                <div class="notice_btn notice_btn_movetotracklist"></div>
+                <div class="notice_btn notice_btn_deletefromcart"></div>
+            </div>
+            
+        </div>
+    </div>
+    <!--刪除品項確認視窗 end-->
     
 	</div>  
     <!-- 頁籤 end -->
@@ -527,11 +654,12 @@ $(document).ready(function(){
 <div class="FooterALL">
 	<div class="Footer_position">
 		<ul class="FooterMenu">
-			<li><a href="about_us.html">關於我們</a>｜</li>
-			<li><a href="contact_us.html">聯絡我們</a>｜</li>
-			<li><a href="terms_n_condition.html">條款及細則</a>｜</li>
-			<li><a href="privacy_policy.html">隱私條款</a></li>
-		</ul>
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
+        </ul>
 		<div class="FooterICON">
 			<button class="Quality"></button>
 			<button class="Join"></button>

@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 
 
-<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
@@ -36,7 +36,7 @@ ddsmoothmenu.init({
 
 </script>
 
-<!--20161130 Roger 新增js-->
+
 <script type="text/javascript">
     $(document).ready(function(){
 
@@ -77,12 +77,24 @@ ddsmoothmenu.init({
                 }
             }
         });
+
+        //footermenu置中
+        var FooterMenuWidth = $('.FooterMenu').width();
+        var FooterWidth = $('.FooterMenu').parent().width();
+        var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+        $('.FooterMenu').css('margin-left',FooterPositionX);
+
+        //active按鈕
+        $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
+        });
         
 
 
     });  
 </script>
-<!--20161130 Roger 新增js-->
+
 
 </head>
 
@@ -91,12 +103,13 @@ ddsmoothmenu.init({
 
 <div class="HeadALL">
     <div class="HeadMenu">
-    	<a href="" class="HeadMenuLogin">會員登入</a>
-        <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        <!--<a href="" class="BuyALot">諮詢服務</a>-->
-        <a href="" class="NextDrink">下次再喝</a>
-        <a href="" class="MyList">我的清單</a>
-        <!--<a id="language_en" style="cursor:pointer;">English</a>-->
+        <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
     <div class="TagALL">
     	<ul>
@@ -1457,7 +1470,6 @@ ddsmoothmenu.init({
                             <div class="Sign_WineInfo_Award Award1">
                                 <img src="images/Award/AW25.jpg" class="decanterStar">
                             </div>
-                            <div class="Sign_WineInfo_24HRexpress_icon"></div>
                             <div class="CLEAR"></div>
                             <div class="Sign_WineInfo_capacity">750ml</div>
                             <div class="Sign_WineInfo_year">2012</div>
@@ -1480,30 +1492,6 @@ ddsmoothmenu.init({
                     </div>
                 </div>
             </div>
-            <!--
-    		<div class="Sign">
-    			<h1>今晚就是要不醉不歸</h1>
-        		<div class="SignONE">
-            		<h3>史坦因布赫麗絲玲史坦因布赫麗絲玲白酒白酒</h3>
-            		<h4>Domaine Weinbach Riesling Domaine Weinbach Riesling</h4>
-            		<em><a href=""><img src="images/pic/WB1.jpg" /></a></em>
-            		<div class="List_Sign_WineInfo_layout">
-             			<div class="AwardALL">
-                			<strong class="Award1"><img src="images/Award/decanterStar.png" /></strong>
-                			<div class="MoreInfo MoreInfo2">750ml</div>
-                			<div class="MoreInfo">2012</div> 
-             			</div>  
-             			<div class="List_Sign_ExpressIcon_layout"></div>
-             			<div class="List_Sign_Price">
-               				<span class="button_addCart_float">$</span>
-               				<span class="blue16">114,010</span>
-               				<span class="button_addCart_float">
-               					<button title="預訂商品" class="button_addCart_preorder"></button>
-               				</span>
-             			</div>    
-            		</div>
-       			</div>
-       		</div>-->
 		</div>  
 		<!-- ThirdSign end --> 
 		<div class="Wine_Search_List_ALL">
@@ -1568,6 +1556,7 @@ ddsmoothmenu.init({
                     	<h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                     	<h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                     	<div class="WinePage"></div>
+                        <!--<div class="tracking"></div>-->
                     	<h3>
                     		<div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                     	</h3>
@@ -1661,6 +1650,7 @@ ddsmoothmenu.init({
                     	<h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                     	<h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                     	<div class="WinePage"></div>
+                        <!--<div class="tracking"></div>-->
                     	<h3>
                     		<div class="ProducingArea_wine_lists">
                     		<span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1690,6 +1680,7 @@ ddsmoothmenu.init({
                     	<h1>阿里昂酒莊 阿里昂精選紅酒</h1>
                     	<h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                     	<div class="WinePage"></div>
+                        <!--<div class="tracking"></div>-->
                     	<h3>
                     		<div class="ProducingArea_wine_lists">
                     			<span class="LittleFlag">
@@ -1733,6 +1724,7 @@ ddsmoothmenu.init({
                     	<h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                     	<h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                     	<div class="WinePage"></div>
+                        <!--<div class="tracking"></div>-->
                     	<h3>
                     		<div class="ProducingArea_wine_lists">
                     		<span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>

@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link rel="stylesheet" type="text/css" href="css/beer.css">
 
-<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
@@ -39,11 +39,19 @@ ddsmoothmenu.init({
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 
+
 </script>
 
 <!--WinInfo現貨與預訂格線-->
 <script type="text/javascript">
  $(document).ready(function() {
+    //footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
+
     var x = document.getElementById("Price");
 	var y = document.getElementById("PreorderPrice");
 	
@@ -51,8 +59,13 @@ ddsmoothmenu.init({
 		document.getElementById("Price").style.border = "0px dotted #999";
 		}
 		else{
-		return;	
+			
 		};
+
+    //追蹤酒款按鈕
+    $('.IntroImg .Tracking').click(function(){
+        $(this).toggleClass('active');
+    });
 });  
 </script>
 
@@ -76,12 +89,13 @@ ddsmoothmenu.init({
 
 <div class="HeadALL">
     <div class="HeadMenu">
-        <a href="" class="HeadMenuLogin">會員登入</a>
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
         <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        <!--<a href="" class="BuyALot">諮詢服務</a>-->
-        <!-- <a href="" class="NextDrink">下次再喝</a> -->
         <a href="" class="MyList">我的清單</a>
-        <!--<a id="language_en" style="cursor:pointer;">English</a>-->
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
     <div class="TagALL beer_TagALL">
         <ul>
@@ -1313,10 +1327,9 @@ ddsmoothmenu.init({
         	        <div class="DetailedIMG" style="background-image:url(images/beer/beer05.jpg);"></div>
                     <div class="Label">
                         <img src="images/pic/L01.jpg" />
+
                     </div> 
-                    <div class="WineCapacity">
-                        <span>375ml</span>
-                    </div>
+                    <div class="Tracking"></div>
                 </div><!-- IntroImg 酒瓶圖片 end-->
                 <div class="wine_detail_wineinfo_layout">
                 	<h2>
@@ -1326,7 +1339,11 @@ ddsmoothmenu.init({
                 	<ul class="Detail beer_Detail"><!-- Detail 細項資料 --> 
                         <li class="MarketingINFO"> 適合週末的午後，與三五好友共享的輕鬆酒款。 </li>
                         <li class="wine_detail_wineinfo_status">
+                            <div class="WineCapacity">
+                                <span>375ml</span>
+                            </div>
                             <span class="wine_detail_wineinfo_status_number">#1234</span>
+
                             <img src="images/icon/NoBouns_26x26.png" width="26" height="26" class="wine_detail_wineinfo_status_nobouns" title="特殊商品不適用紅利累計"/>
 
                         </li>
@@ -1728,21 +1745,21 @@ ddsmoothmenu.init({
     	        <div class="WineDetail_Rank"><!--一個評分--> 
         	        <h1>Rate Beer</h1>
                     <h2>92</h2>
-                    /
-                    <h3>100分</h3>
+                    
+                    <h3>/&nbsp;100分</h3>
                 </div><!--一個評分 end-->
                 <div class="WineDetail_Rank"><!--一個評分--> 
                     <h1>Beeradvocate</h1>
                     <h2>92</h2>
-                    /
-                    <h3>100分</h3>
+                    
+                    <h3>/&nbsp;100分</h3>
                 </div><!--一個評分 end-->
                 <!--20170220 Roger 新增評分範例樣式-->
                 <div class="WineDetail_Rank"><!--一個評分--> 
                     <h1>Beeradvocate Bros</h1>
                     <h2>92</h2>
-                    /
-                    <h3>100分</h3>
+                    
+                    <h3>/&nbsp;100分</h3>
                 </div><!--一個評分 end-->
                 <!--20170220 Roger 新增評分範例樣式 end-->
                 <div class="CLEAR"></div>
@@ -2196,15 +2213,18 @@ ddsmoothmenu.init({
 <div class="CLEAR" ></div>
 
 <div class="FooterALL" >
-	<div class="Footer_position">
+    <div class="Footer_position">
+        <!--201803 Roger 新增手機板連結-->
         <ul class="FooterMenu">
             <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
             <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
             <li><a href="" target="_parent">條款及細則</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
         </ul>
+        <!--201803 Roger 新增手機板連結 end-->
         <div class="FooterICON">
-           <button class="Quality"></button>
+           <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>
            <button class="Join"></button>
            <button class="Novice"></button>
         </div>
