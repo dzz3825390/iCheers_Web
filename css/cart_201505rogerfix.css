@@ -1630,7 +1630,7 @@ li.FreightNotches2 table tr th{
 	background-color: #FFF; }
 		
 .cart_data p{
-	
+	color: #717171;
 	width:720px;}
 
 .DeliveryTime p{
@@ -1638,11 +1638,17 @@ li.FreightNotches2 table tr th{
 }
 
 
-.cart_data h1{ text-align:right; width:180px; }
-.DeliveryTime h1{ width: 215px; }
-/*20170808 Roger 修改*/
-.cart_data li{ display:block; float:left; font-size: 13px; line-height: 30px; min-height:30px; color: #000; padding:15px 0 5px 0; *padding:0; border-bottom: 1px dotted #dfdfdf; }
-/*20170808 Roger 修改 end*/
+.cart_data h1{ text-align:right; width:167px; }
+.DeliveryTime h1{ width: 167px; }
+
+.cart_data li{ display:block; float:left; font-size: 13px; line-height: 30px; min-height:30px; color: #333333; padding:15px 0 5px 0; *padding:0; border-bottom: 1px dotted #dfdfdf; }
+.cart_data li input[type="text"]{
+	color: #717171;
+}
+
+.cart_data li select{
+	color: #717171;
+}
 .cart_data2 li{padding:3px 0 3px 0;}
 
 .cart_data h1 span{ color:#F00;}
@@ -2797,9 +2803,9 @@ li.Last_NoBorder,
 }
 
 .CartStep3_DeliveryInfo_others .row{
-	width: 100%;
 	min-height: 24px;
 	box-sizing: border-box;
+	margin-top: 20px;
 }
 
 .CartStep3_DeliveryInfo_others .row .text{
