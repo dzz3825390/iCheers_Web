@@ -2932,3 +2932,32 @@ li.Last_NoBorder,
 	width: 80%;
 	height: 150px;
 }
+
+.DeliveryCostTable{
+	border: 1px solid #cccccc;
+	margin-left: 200px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	color: #666;
+}
+
+
+.DeliveryCostTable th{
+	color :#fff;
+	text-align: center;
+}
+
+.DeliveryCostTable td{
+	padding: 0 8px;
+	text-align: center;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+.DeliveryCostTable td:last-child{
+	border-right: none;
+}
+
+.DeliveryCostTable tr:last-child td{	
+	border-bottom: none;
+}

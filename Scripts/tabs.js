@@ -102,13 +102,7 @@ $(function(){
 				$(".Bracket").slideToggle(300);
 			});
 			
-			
-		// 查看運費級距
-		/*201708 Roger hotfix*/	
-		$(".FreightBTN").click(function(){
-			$(".FreightNotches").slideToggle(300);
-			});
-		/*201708 Roger hotfix end*/	
+		
 			
 			
 	});
