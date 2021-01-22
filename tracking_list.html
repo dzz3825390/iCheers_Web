@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link href="css/wine_list.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/member.css" />
-<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
@@ -33,6 +33,11 @@
 
         //active按鈕
         $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
+        });
+
+        //單一年份active按鈕
+        $('.WineInformation .List_Year .tracking_icon').click(function(){
             $(this).toggleClass('active');
         });
     });
@@ -220,7 +225,7 @@
                     </div>
                     <div class="WineInformation_layout">
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2012</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon active"></div></li>
                           <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired"></li>  
@@ -244,7 +249,7 @@
                         <div class="CLEAR"></div>
                         <!-- WineInformation 一個年份-->
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2012</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
                           <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired">2020/12/31</li>
@@ -274,7 +279,7 @@
                     </div>
                     <div class="WineInformation_layout">
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2012</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
                           <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired"></li>  
@@ -304,7 +309,7 @@
                         </ul>
                         <!-- WineInformation 一個年份-->  
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2013</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2013</a><div class="tracking_icon"></div></li>
                           <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired"></li>
@@ -317,7 +322,7 @@
                         </ul>
                         <!-- WineInformation 一個年份-->  
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2014</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2014</a><div class="tracking_icon"></div></li>
                           <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired"></li>
@@ -330,7 +335,7 @@
                         </ul>
                         <!-- WineInformation 一個年份-->  
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2015</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2015</a><div class="tracking_icon"></div></li>
                           <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired"></li>
@@ -359,7 +364,7 @@
                 </div>
                 <div class="WineInformation_layout">
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2012</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
                           <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired"></li>  
@@ -369,7 +374,7 @@
                         <div class="CLEAR"></div>
                         <!-- WineInformation 一個年份-->
                         <ul class="WineInformation">
-                          <li class="List_Year"><a href="#" target="_blank">2012</a></li>
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
                           <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
                           <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
                           <li class="List_Expired">2020/12/31</li>

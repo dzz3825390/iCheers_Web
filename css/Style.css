@@ -3007,7 +3007,6 @@ img.HOT8_NO {
     max-height: 630px;
     height: 90px;
     font-size: 15px;
-    /*background-image:url(../images/ConditionBG2.png);*/
     background-repeat: repeat-x;
     position: relative;
 }
@@ -3225,11 +3224,14 @@ img.HOT8_NO {
 
 .Result .Wine_Name .tracking:hover{
     cursor: pointer;
-    background-position: center bottom;
+    /*background-position: center bottom;*/
 }
 
 .Result .Wine_Name .tracking.active{
     background-position: center bottom;
+    animation-name: TrackingBtn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 
 .Result .Wine_Name .WhiskyBigImg {
@@ -3390,7 +3392,6 @@ img.HOT8_NO {
             text-decoration: underline;
         }
 
-/*20161130 Roger 調整選擇器與寬度、間距*/
 .WineInformation li.List_Year {
     width: 59px;
     text-align: center;
@@ -3402,11 +3403,23 @@ img.HOT8_NO {
     width: 20px;
     height: 20px;
     background-image: url(../images/icon/TrackingList_red.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     position: absolute;
     left: -7px;
     top: 7px;
+    cursor: pointer;
+    display: none;
 }
-/*20161130 Roger 調整選擇器與寬度、間距 end*/
+
+.WineInformation li.List_Year .tracking_icon:hover{
+    background-position: center bottom;
+}
+
+.WineInformation li.List_Year .tracking_icon.active{
+    background-position: center bottom;
+}
+
 
     .List_Year a:hover span {
         text-decoration: underline;
@@ -3470,7 +3483,6 @@ img.HOT8_NO {
         margin-top: 8px;
     }
 
-
 .WineInformation li.List_Capacity {
     width: 44px;
     margin-left: 3px;
@@ -3492,7 +3504,6 @@ img.HOT8_NO {
     color: #717071;
     font-size: 13px;
 }
-
 
 
 .List_Discount_save_icon{
@@ -3766,8 +3777,7 @@ margin-top: 5px;
     *padding-bottom: 0px;
 }
 
-.BookMark {
-}
+
 
 .MarketingText {
     line-height: 24px;
@@ -4748,7 +4758,6 @@ ul.Detail {
         margin-right: 0;
     }
 
-
 .wine_detail_wineinfo_status_number{
     display: inline-block;
     float: right;
@@ -4790,7 +4799,6 @@ ul.Detail {
     margin-top: 2px;
     float: left;
 }
-
 
 .wine_detail_wineinfo_status_24HRexpress{
     margin-right: 10px;
@@ -5078,26 +5086,34 @@ ul.Detail {
             height: auto;
         }
 
-    .IntroImg .Tracking{
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        right: 2px;
-        top: 47px;
-        background-image: url(../images/icon/icon_tracking_large.png); 
-        background-repeat: no-repeat;
-        background-position: center top;
-        cursor: pointer;
-        display: block;
-    }
+        .IntroImg .Tracking{
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                right: 2px;
+                top: 47px;
+                background-image: url(../images/icon/icon_tracking_large.png); 
+                background-repeat: no-repeat;
+                background-position: center top;
+                cursor: pointer;
+                display: block;
+            }
 
-    .IntroImg .Tracking:hover{
-        background-position: center bottom;
-    }
+            @keyframes TrackingBtn {
+                0%{transform: rotateY(0deg);}
+                100%{transform: rotateY(360deg);}
+            }
 
-    .IntroImg .Tracking.active{
-        background-position: center bottom;
-    }    
+            /*.IntroImg .Tracking:hover{
+                background-position: center bottom;
+            }*/
+
+            .IntroImg .Tracking.active{
+                background-position: center bottom;
+                animation-name: TrackingBtn;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+            }    
 
 
 /**************詳目頁 end*************************/
@@ -5917,72 +5933,6 @@ span.LittleFlag img {
     font-family: "Arial","微軟正黑體";
     margin-top: 5px;
 }
-
-.OneKind {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-    .OneKind h1 {
-        display: block;
-        line-height: 22px;
-        max-height: 44px;
-        overflow: hidden;
-        width: 233px;
-        font-size: 13px;
-        text-indent: -22px;
-        padding: 0px 10px 0px 37px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        background-image: url(../images/OneKindBG.png);
-    }
-
-        .OneKind h1 em.SeeMore {
-            float: right;
-        }
-
-    .OneKind ul {
-        display: block;
-        padding-left: 15px;
-    }
-
-
-
-
-
-        .OneKind ul li {
-            float: none;
-            clear: both;
-            text-align: left;
-            line-height: 17px;
-            margin-bottom: 3px;
-        }
-
-            .OneKind ul li .OneCategory {
-                display: inline-block;
-                max-width: 200px;
-                float: left;
-            }
-
-            .OneKind ul li .OnePrice {
-                display: inline-block;
-                max-width: 100px;
-                float: right;
-            }
-
-            .OneKind ul li:hover {
-                font-weight: bold;
-            }
-
-            .OneKind ul li a {
-                color: #595757;
-                text-decoration: none;
-            }
-
-
-            .OneKind ul li b {
-                float: right;
-                margin-right: 10px;
-            }
 
 
 
@@ -7654,15 +7604,6 @@ h3.PRICE {
 
 
 
-.GroupsPriceAreaBG {
-    width: 340px;
-    height: 10px;
-    margin-top: 15px;
-    background-image: url(../images/GroupsPriceAreaBG.png);
-}
-
-
-
 
 
 
@@ -9327,6 +9268,7 @@ ul.Bottlee_Wine button.ShoppingCart {
         width: 36px;
         height: 34px;
         background: url(../images/tagBG2.png) left top no-repeat;
+        font-family: Verdana, Geneva, sans-serif;
         color: #fff;
         line-height: 24px;
         text-align: left;
@@ -9767,24 +9709,6 @@ ul.Bottlee_Wine button.ShoppingCart {
 
 
 
-.AgainIcon {
-    background-color: #8B8B8B;
-    cursor: pointer;
-}
-
-    .AgainIcon:hover {
-        background-color: #785472;
-    }
-
-/*
-button.Again{
-	width:22px;
-	height:22px;
-	float:left;
-	}
-	*/
-
-
 .Login .OtherLogin {
     display: block;
     float: left;
@@ -10099,61 +10023,7 @@ body.index_login .Contents ul li {
 
 
 
-/*看更多評價*/
-.MoreEvaluate {
-    display: block;
-    width: 475px;
-    clear: both;
-    float: left;
-    margin-left: 25px;
-}
 
-    .MoreEvaluate ul li {
-        clear: both;
-        *clear: none;
-        float: left;
-        padding: 5px 0px 5px 15px;
-        border-bottom: 1px solid #E2E2E2;
-        cursor: pointer;
-    }
-
-        .MoreEvaluate ul li:hover {
-            background-color: #F2F2F2;
-        }
-
-
-        .MoreEvaluate ul li.LestMoreEvaluate {
-            border: none;
-        }
-
-    .MoreEvaluate a {
-        display: block;
-        width: 440px;
-        font-size: 13px;
-        font-weight: bold;
-        margin: 20px 0px 10px 0px;
-        color: #424242;
-        padding: 4px 0px 3px 35px;
-        background-image: url(../images/MoreEvaluateBG.png);
-        background-repeat: no-repeat;
-    }
-
-
-        .MoreEvaluate a:hover {
-            color: #666;
-        }
-
-    .MoreEvaluate strong {
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        display: block;
-        float: left;
-        clear: both;
-        font-size: 16px;
-        color: #785472;
-        line-height: 24px;
-        background-color: #F2F2F2;
-    }
 
 
 em.AwardName {
@@ -10323,87 +10193,6 @@ em.AwardFraction {
         max-height: 24px;
     }
 
-/* 歷年佳績   */
-
-
-.FullYearAward {
-    clear: both;
-    display: block;
-    width: 100%;
-    height: auto;
-    padding-bottom: 20px;
-    background-color: #f1f1f1;
-    border-top: 1px solid #CACACA;
-}
-
-    .FullYearAward ul {
-        display: block;
-        clear: both;
-        width: 93%;
-        margin-left: 15px;
-    }
-
-        .FullYearAward ul li {
-            clear: both;
-            line-height: 30px;
-            height: 30px;
-            background-image: url(../images/FullYearAward_liBg.png);
-            background-position: bottom;
-            background-repeat: no-repeat;
-            padding: 2px 0px;
-        }
-
-            .FullYearAward ul li.ThisYearEvaluate {
-                font-weight: bold;
-                color: #333;
-            }
-
-.YearAward_Year {
-    display: block;
-    float: left;
-    width: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #785472;
-    font-size: 14px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    background-image: url(../images/AtAGlance_CenterINFO_BG.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    margin-right: 5px;
-}
-
-.YearAward_Fraction {
-    display: block;
-    float: right;
-    width: 50px;
-}
-
-.YearAward_Name {
-    display: block;
-    float: left;
-    width: 200px;
-}
-
-.YearAward_Img {
-    display: block;
-    float: left;
-    width: 50px;
-}
-
-
-    .YearAward_Img img {
-        margin-top: 4px;
-        width: auto;
-        max-height: 24px;
-    }
-
-
-.FullYearAward ul li.FullYearAward_tittle {
-    height: 38px;
-    padding-left: 100px;
-    background-image: none;
-}
 
 
 /*  細節欄*/
@@ -10561,139 +10350,6 @@ em.AwardFraction {
     font-family: Verdana, Geneva, sans-serif;
 }
 
-
-/*  長得獎 */
-
-
-.Spacing {
-    display: block;
-    padding: 0px 10px 0px 0px;
-    border-right: 1px solid #CCC;
-}
-
-.AwardLong {
-    display: block;
-    width: 135px;
-    height: 39px;
-    border: 2px solid #80805F;
-    background-repeat: repeat-x;
-    background-image: url(../images/Award_BG.png);
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 10px;
-    cursor: pointer;
-    float: left;
-}
-
-
-em.Spacing {
-    float: left;
-    border-right: 1px solid #CCC;
-    height: 43px;
-    padding-right: 6px;
-    margin: 8px 0px 8px 6px;
-}
-
-    em.Spacing img {
-        display: block;
-        float: left;
-        max-height: 40px;
-        width: auto;
-        margin: 0px 5px;
-    }
-
-
-
-.AwardLong h5 {
-    text-align: center;
-    font-weight: bold;
-    color: #FFF;
-    line-height: 21px;
-    letter-spacing: 1px;
-    max-width: 135px;
-    max-height: 21px;
-}
-
-.AwardLong h6 {
-    line-height: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    text-align: center;
-    max-width: 135px;
-    max-height: 21px;
-}
-
-
-    .AwardLong h6 img {
-        float: none;
-        margin: 1px auto 0px auto;
-        max-height: 16px;
-        width: auto;
-    }
-
-
-/*  短得獎 */
-
-.Awardshort {
-    display: block;
-    width: 50px;
-    height: 32px;
-    border: 2px solid #80805F;
-    background-repeat: repeat-x;
-    background-image: url(../images/Award2_BG.png);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-    .Awardshort h5 {
-        text-align: center;
-        font-weight: bold;
-        color: #FFF;
-        line-height: 16px;
-        letter-spacing: 1px;
-        max-width: 50px;
-        max-height: 16px;
-    }
-
-
-    .Awardshort h6 {
-        line-height: 17px;
-        text-align: center;
-        max-width: 50px;
-        max-height: 16px;
-    }
-
-
-
-
-/*  得獎長度100% */
-
-.Award100Pa {
-    display: block;
-    height: 32px;
-    border: 2px solid #80805F;
-    background-repeat: repeat-x;
-    background-image: url(../images/Award2_BG.png);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-    .Award100Pa h5 {
-        text-align: center;
-        font-weight: bold;
-        color: #FFF;
-        line-height: 16px;
-        letter-spacing: 1px;
-        max-height: 16px;
-        padding: 0px 5px;
-    }
-
-
-    .Award100Pa h6 {
-        line-height: 17px;
-        text-align: center;
-        max-height: 16px;
-        padding: 0px 5px;
-    }
 
 
 /* 按鈕 */
@@ -11549,7 +11205,7 @@ ul.Emphasis {
     margin-left: 15px;
 }
 
-.Advanced_Order input{  
+.Advanced_Order input[type="text"]{  
     width: 90px;
     height: 28px;
     line-height: 28px;
@@ -11749,22 +11405,6 @@ ul.Emphasis {
 }
 
 
-.CelebrityTitleINFO {
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 500px;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: bold;
-    font-family: "微軟正黑體", Verdana;
-    color: #333;
-    background: url(../images/CelebrityTittleBG.png) left top no-repeat;
-    padding: 80px 8px 0 8px;
-    left: 0px;
-    top: 110px;
-    z-index: 1;
-}
 
 /*20161209 Roger 修改高度*/
 .MediumTitle {
@@ -14076,4 +13716,226 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
     color: #c20012;
     font-weight: bold;
     text-decoration: underline;
+} 
+
+
+
+.notice_BG{
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666666;
+    box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+    position: fixed;
+    z-index:999999;
+}
+
+.notice_BG div:focus{
+    outline: none;
+}
+
+/*20191112 Roger fix*/
+.notice_title_layout{
+    width: 100%;
+    height: 40px;
+    background-color: #666666;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+/*20191112 Roger fix end*/
+
+.notice_title{
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+}
+
+/*20191112 Roger fix*/
+.notice_title_closeBTN{
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/btn_close.png);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/*20191112 Roger fix end*/
+
+.notice_title_closeBTN:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_close2.png);
+}
+
+.notice_body{
+    width: 90%;
+    height: 90%;
+    margin: 20px auto;
+}
+
+    .notice_body p{
+        font-size: 14px;
+        color: #333333;
+        line-height: 28px;
+    }
+
+    .notice_body p span{
+        color: #c20012;
+        font-weight: bold;
+        margin: 0 3px;
+    }
+
+    .notice_body p em{
+        display: inline-block;
+        vertical-align: super;
+        margin-left: 5px;
+        width: 150px;
+        height: 1px;
+        background-color: #333;
+    }
+
+    .notice_body p b{
+        font-size: 15px;
+        text-shadow: 0 0 0 rgba(0,0,0,.8);
+    }
+
+.notice_body_input_layout{
+    width: 100%;
+    height: 32px;
+    margin: 16px 0;
+}
+
+.notice_body_input_layout:after{
+    content:"";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+    .notice_body_input_layout span{
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #666666;
+        float: left;
+        margin-left: 16px;
+    }
+
+    .notice_body_input_layout input{
+        display: inline-block;
+        height: 30px;
+        font-size: 16px;
+        background-color: #fff;
+        border:1px solid #cccccc;
+        line-height: 30px;
+        float: left;
+        margin-left: 16px;
+        padding: 0 5px;
+        color: #333333;
+        outline: none;
+    }
+
+.notice_body_radio_layout{
+    width: 100%;
+    height: 32px;
+    margin: 16px 0;
+}
+
+    .notice_body_radio_layout input{
+        display: inline-block;
+        float: left;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+
+    .notice_body_radio_layout span{
+        display: inline-block;
+        min-height: 32px;
+        line-height: 32px;
+        font-size: 18px;
+        color: #666666;
+        float: left;
+    }
+
+        .notice_body_radio_layout span em{
+            color: #c20012;
+            font-weight: bold;
+            margin: 0 3px;
+        }
+
+.notice_btn_row{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.notice_btn_row:after{
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.notice_btn_row .notice_btn{
+    float: left;
+    margin-right: 5px;
+}
+
+.notice_btn_row .notice_btn:last-child{
+    margin-right: 0;
+}
+
+.notice_confirmBTN{
+    width: 100px;
+    height: 41px;
+    background-image: url(../images/icon/btn_confirm.png);
+    margin: 20px auto;
+}
+
+.notice_confirmBTN:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_confirm2.png);
+}
+
+
+.notice_IseeBTN{
+    width: 100px;
+    height: 41px;
+    background-image: url(../images/icon/btn_Isee.png);
+    margin: 20px auto;
+}
+
+.notice_IseeBTN:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_Isee2.png);
+}
+
+.notice_btn_trackall{
+    width: 139px;
+    height: 41px;
+    background-image: url(../images/icon/btn_trackall.png);
+}
+
+.notice_btn_trackall:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_trackall2.png);
+}
+
+.notice_btn_tracksingle{
+    width: 139px;
+    height: 41px;
+    background-image: url(../images/icon/btn_tracksingle.png);
+}
+
+.notice_btn_tracksingle:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_tracksingle2.png);
 }

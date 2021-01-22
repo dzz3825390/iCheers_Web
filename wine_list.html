@@ -18,7 +18,8 @@
 <script type="text/javascript" src="Scripts/ddsmoothmenu.js"></script> <!-- 上選單 -->
 <script type="text/javascript" src="Scripts/ShoppingCart.js"/></script> <!-- 浮動購物車 -->
 <script type="text/javascript" src="Scripts/Head.js"/></script> <!-- 有沒有收到確認信彈出 -->
-
+<script type="text/javascript" src="Scripts/tabs.js"/></script>
+<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script> 
 <script type="text/javascript" src="Scripts/WineList.js"/></script> <!-- 所有的簡目頁 -->
 
 
@@ -85,11 +86,35 @@ ddsmoothmenu.init({
 
         $('.FooterMenu').css('margin-left',FooterPositionX);
 
+        //紀錄一下點哪瓶酒
+        var WineLength
         //active按鈕
         $('.Result .Wine_Name .tracking').click(function(){
+            WineLength = $(this).parent().parent().index();
+
             $(this).toggleClass('active');
+            Pops(notice_TrackWine);
+
+            /*if ($(this).hasClass('active')){
+               
+              $(this).parent().next().find('li .tracking_icon').css('display','block');
+            }*/
+        });
+
+        //開啟單一年份選單
+        $('.notice_btn_tracksingle').click(function(){
+            $('.Result .ALL').eq(WineLength).find('li .tracking_icon').css('display','block');
+            Wops('notice_TrackWine');
+        });
+
+        $('.notice_btn_trackall').click(function(){
+            Wops('notice_TrackWine');
         });
         
+        //單一年份active按鈕
+        $('.WineInformation .List_Year .tracking_icon').click(function(){
+            $(this).toggleClass('active');
+        });
 
 
     });  
@@ -1556,17 +1581,17 @@ ddsmoothmenu.init({
                     	<h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                     	<h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                     	<div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
+                        <div class="tracking"></div>
                     	<h3>
                     		<div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                     	</h3>
                    	</div>
                    	<div class="WineInformation_layout">
                     	<ul class="WineInformation">
-                        	<li class="List_Year"><a href="#" target="_blank">2012</a ></li>
-                            <!--20161130 Roger 斜線錢後新增空白-->
+                        	<li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
+                            
 	                        <li class="List_Award"><a href="#" target="_blank">RVF&nbsp;/&nbsp;100</a></li>
-                            <!--20161130 Roger 斜線錢後新增空白 end-->
+                            
     	                    <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
         	                <li class="List_Discount">8.5折</li>
             	            <li class="List_Save">
@@ -1606,7 +1631,7 @@ ddsmoothmenu.init({
                 	    <div class="CLEAR"></div>
                     	<!-- WineInformation 一個年份-->
                     	<ul class="WineInformation">
-                        	<li class="List_Year"><a href="#" target="_blank">2012</a ></li>
+                        	<li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
 	                        <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png"  class="decanterStar" /></a></li>
     	                    <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
         	                <li class="List_Discount">8.5折</li>
@@ -1650,7 +1675,7 @@ ddsmoothmenu.init({
                     	<h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                     	<h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                     	<div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
+                        <div class="tracking"></div>
                     	<h3>
                     		<div class="ProducingArea_wine_lists">
                     		<span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1659,7 +1684,7 @@ ddsmoothmenu.init({
                 	</div>
                 	<div class="WineInformation_layout">
                 		<ul class="WineInformation">
-                    		<li class="List_Year">2010</li>
+                    		<li class="List_Year"><a href="">2010</a><div class="tracking_icon"></div></li>
 	                    	<li class="List_Award"><img src="images/Award/GR_3y.png"  class="GR" /></li>
     	                	<li class="List_Capacity">750ml</li>
         	            	<li class="List_Discount">8.5折</li>
@@ -1680,7 +1705,7 @@ ddsmoothmenu.init({
                     	<h1>阿里昂酒莊 阿里昂精選紅酒</h1>
                     	<h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                     	<div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
+                        <div class="tracking"></div>
                     	<h3>
                     		<div class="ProducingArea_wine_lists">
                     			<span class="LittleFlag">
@@ -1692,7 +1717,7 @@ ddsmoothmenu.init({
                 	</div>
                 	<div class="WineInformation_layout">
                 		<ul class="WineInformation">
-	                    	<li class="List_Year">2012</li>
+	                    	<li class="List_Year"><a href="">2012</a><div class="tracking_icon"></div></li>
     	                	<li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
         	            	<li class="List_Capacity">750ml</li>
             	        	<li class="List_Discount">8.5折</li>
@@ -1724,7 +1749,7 @@ ddsmoothmenu.init({
                     	<h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                     	<h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                     	<div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
+                        <div class="tracking"></div>
                     	<h3>
                     		<div class="ProducingArea_wine_lists">
                     		<span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1733,7 +1758,7 @@ ddsmoothmenu.init({
                 	</div>
                 	<div class="WineInformation_layout">
                 		<ul class="WineInformation">
-                    		<li class="List_Year">2010</li>
+                    		<li class="List_Year"><a href="">2010</a><div class="tracking_icon"></div></li>
                     		<li class="List_Award">
                                 <!--20160921 Roger 修改獎牌樣式-->
                     			<a href="#" target="_blank" title="2016IWSC葡萄酒類金牌">
@@ -1778,7 +1803,7 @@ ddsmoothmenu.init({
 	                	<div class="CLEAR"></div>
     	            	<!-- WineInformation 一個年份-->
         	        	<ul class="WineInformation">
-            	        	<li class="List_Year">2009</li>
+            	        	<li class="List_Year"><a href="">2009</a><div class="tracking_icon"></div></li>
                 	    	<li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
                     		<li class="List_Capacity">750ml</li>
                     		<li class="List_Discount">8.5折</li>
@@ -1792,7 +1817,7 @@ ddsmoothmenu.init({
 	                	<div class="CLEAR"></div>
     	            	<!-- WineInformation 一個年份--> 
         	        	<ul class="WineInformation">
-            	        	<li class="List_Year">2000</li>
+            	        	<li class="List_Year"><a href="">2000</a><div class="tracking_icon"></div></li>
                 	    	<li class="List_Award"><!--20160921 Roger 修改獎牌樣式-->
                                 <a href="#" target="_blank" title="2016IWSC葡萄酒類金牌">
                                     <img src="images/Award/wineDetail_award_01.jpg" class="Medals">
@@ -1897,9 +1922,22 @@ ddsmoothmenu.init({
     </div>
 </div> 
 <!-- TC_And_UK_ALL 中英翻譯 -->
-
-
-
+<!--多年份品像確認視窗-->
+<div id="notice_TrackWine" class="notice_BG" style="width:400px;min-height:100px;">
+        <div class="notice_title_layout">
+            <div class="notice_title">此款酒有多個年份</div>
+            <div class="notice_title_closeBTN" onclick="Wops('notice_TrackWine')"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div id="notice_body" class="notice_body">
+            <div class="notice_btn_row">
+                <div class="notice_btn notice_btn_trackall"></div>
+                <div class="notice_btn notice_btn_tracksingle"></div>
+            </div>
+            
+        </div>
+    </div>
+<!--多年份品像確認視窗 end-->
 
 
 <div class="CLEAR"></div>
