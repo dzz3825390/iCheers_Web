@@ -72,7 +72,7 @@ function Wops(name){
 $(document).ready(function(){
 
 	$("#img2").click(function(){
-		Pops("#notice_14");
+		Pops("#notice2");
 	});
 
 	// e-Coupo彈出視窗
