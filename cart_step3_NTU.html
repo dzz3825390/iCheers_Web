@@ -129,7 +129,103 @@ function Click_S(form){
 	if (obj.id=="Telephone2"){ obj.value=""; }
 }
 </script>
+<!--台大實驗用 結束後移除-->
+<style type="text/css">
+.ticket_layout{
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
 
+.ticket_layout:after{
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.one_ticket{
+    width: 170px;
+    height: 324px;
+    float: left;
+}
+
+.ticket_layout .gray_line{
+    width:1px;height:290px;background-color:#d4d4d4;margin-top:16px;margin-left:45px;float:left;
+}
+
+.ticket_btn_layout{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.ticket_btn_layout:after{
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.ticket_btn_layout button{
+    border: none;
+    background-color: #902808;
+    border-radius: 5px;
+    padding: 5px 13px;
+    color: #ffde00;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    float:left;
+}
+
+.ticket_layout .marquee{
+    width: 121px;
+    height: 121px;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    top: 36px;
+    left: 24px;
+    background-color: #f9f9f4;
+}
+
+.ticket_layout .marquee.cash{
+    top: 57px;
+    background-color: unset;
+}
+
+.ticket_layout .marquee .animate_box{
+    width: 300%;
+    height: 121px;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 0.5s linear infinite;
+    animation-delay: 0.75s;
+}
+
+.ticket_layout .marquee .animate_box .one_glass{
+    width:121px;
+    height: 121px;
+    float: left;
+}
+
+.ticket_layout .GiftInfo_layout{
+    position: absolute;
+    width: 170px;
+    top: 169px;
+    display: none;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -200%; }
+}
+
+</style>
+<!--台大實驗用 結束後移除 end-->
 <!-- 詢問是否滿18歲 -->
 <script language="JavaScript" type="text/javascript">
 $(function(){
@@ -163,7 +259,198 @@ $(function(){
 			
 		$(".notice_body_18BTN, .notice_title_closeBTN").click(function(){
 			$("#notice8, .showDiv").fadeOut(200);
-			});	
+			});
+
+        //控制2組
+        $('#notice3-2 .notice_ok').click(function(){
+            $('#notice3-2').css({
+                width: '720px',
+                height: '530px',
+                left: (intBrowserW - 720) / 2,
+                top: (intBrowserH - 530) / 2
+            });
+
+            
+ 
+            var GiftControl02 = '<p style="text-align:center;font-size:16px;">以下三張禮物兌換券，其中一張是要致贈給您的，請問您希望…</p><div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/300_glass.png);"></div><div class="gray_line"></div><div class="one_ticket" style="background-image: url(images/NTU/100_glass.png);margin-left:45px;"></div><div class="one_ticket" style="background-image: url(images/NTU/500_glass.png);margin-left:15px;"></div></div><div class="ticket_btn_layout"><button style="margin-left: 41px;" id="NoLottery_glass">直接帶走</button><button style="margin-left: 228px;" id="Lottery_glass">試手氣抽一個</button></div>'
+            $('#notice3-2 .notice_title').text('直接拿還是試手氣？');
+            $('#notice3-2 .notice_body').html(GiftControl02);
+
+            //控制2組-直接帶走
+            var GiftControl02_NoLottery = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/300_glass.png);margin-left:calc((100% - 170px)/2)"></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">禮物兌換券將email至您的信箱，敬請查收！</p>'
+            $('#NoLottery_glass').click(function(){
+                $('#notice3-2').css({
+                    width: '350px',
+                    height: '480px',
+                    left: (intBrowserW - 350) / 2,
+                    top: (intBrowserH - 530) / 2
+                });
+                $('#notice3-2 .notice_title').text('收信拿禮物券！');
+                $('#notice3-2 .notice_body').html(GiftControl02_NoLottery);
+            });
+
+            //控制2組-抽獎
+            var GiftControl02_Lottery100 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/glass_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/glass_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_100.png);"></div></div></div><div class="GiftInfo_layout"><div style="text-align:center;color: #fff;font-weight:bold;font-size:20px;">市價$100</div><div style="text-align:center;color: #fff;font-size:16px;margin-top:5px;">LUACRIS<br/>布根地紅酒杯</div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">禮物兌換券將email至您的信箱，敬請查收！</p>'
+
+            var GiftControl02_Lottery500 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/glass_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/glass_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_500.png);"></div></div></div><div class="GiftInfo_layout"><div style="text-align:center;color: #fff;font-size:20px;">市價$500</div><div style="text-align:center;color: #fff;font-size:16px;margin-top:5px;">LUIGI BORMIOLI<br/>頂級系列紅酒杯</div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">禮物兌換券將email至您的信箱，敬請查收！</p>'
+            $('#Lottery_glass').click(function(){
+                $('#notice3-2').css({
+                    width: '350px',
+                    height: '480px',
+                    left: (intBrowserW - 350) / 2,
+                    top: (intBrowserH - 530) / 2
+                });
+                $('#notice3-2 .notice_title').text('收信拿禮物券！');
+                $('#notice3-2 .notice_body').html(GiftControl02_Lottery100);
+                setTimeout(function(){
+                    $('.animate_box').css({
+                        'animation-name':'marquee',
+                        'animation-duration':'5s',
+                        'animation-iteration-count':'1',
+                        'animation-timing-function': 'ease-out'
+                    });
+                    setTimeout(function(){
+                        $('.GiftInfo_layout').fadeIn('slow');
+                    },3000);
+                },3000);
+
+            });
+        });	
+
+        //控制3組
+        $('#notice3-3 .notice_ok').click(function(){
+            $('#notice3-3').css({
+                width: '720px',
+                height: '530px',
+                left: (intBrowserW - 720) / 2,
+                top: (intBrowserH - 530) / 2
+            });
+
+            
+ 
+            var GiftControl03 = '<p style="text-align:center;font-size:16px;">以下三張現金折價券，其中一張是要致贈給您的，請問您希望…</p><div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/300_ticket.png);"></div><div class="gray_line"></div><div class="one_ticket" style="background-image: url(images/NTU/100_ticket.png);margin-left:45px;"></div><div class="one_ticket" style="background-image: url(images/NTU/500_ticket.png);margin-left:15px;"></div></div><div class="ticket_btn_layout"><button style="margin-left: 41px;" id="NoLottery_glass">直接帶走</button><button style="margin-left: 228px;" id="Lottery_glass">試手氣抽一個</button></div>'
+            $('#notice3-3 .notice_title').text('直接拿還是試手氣？');
+            $('#notice3-3 .notice_body').html(GiftControl03);
+
+            //控制3組-直接帶走
+            var GiftControl03_NoLottery = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/300_ticket.png);margin-left:calc((100% - 170px)/2)"></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">現金兌換券將email至您的信箱，敬請查收！</p>'
+            $('#NoLottery_glass').click(function(){
+                $('#notice3-3').css({
+                    width: '350px',
+                    height: '480px',
+                    left: (intBrowserW - 350) / 2,
+                    top: (intBrowserH - 530) / 2
+                });
+                $('#notice3-3 .notice_title').text('收信拿折價券！');
+                $('#notice3-3 .notice_body').html(GiftControl03_NoLottery);
+            });
+
+            //控制3組-抽獎
+            var GiftControl03_Lottery100 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/ticket_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee cash"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/ticket_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_100.png);"></div></div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">現金兌換券將email至您的信箱，敬請查收！</p>'
+
+            var GiftControl03_Lottery500 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/ticket_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee cash"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/ticket_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_500.png);"></div></div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">現金兌換券將email至您的信箱，敬請查收！</p>'
+            $('#Lottery_glass').click(function(){
+                $('#notice3-3').css({
+                    width: '350px',
+                    height: '480px',
+                    left: (intBrowserW - 350) / 2,
+                    top: (intBrowserH - 530) / 2
+                });
+                $('#notice3-3 .notice_title').text('收信拿折價券！');
+                $('#notice3-3 .notice_body').html(GiftControl03_Lottery500);
+                setTimeout(function(){
+                    $('.animate_box').css({
+                        'animation-name':'marquee',
+                        'animation-duration':'5s',
+                        'animation-iteration-count':'1',
+                        'animation-timing-function': 'ease-out'
+                    });
+                },3000);
+
+            });
+        }); 
+
+        //控制4組
+        $('#notice3-4 .notice_keepit').click(function(){
+            $('#notice3-4').css({
+                width: '350px',
+                height: '180px',
+                left: (intBrowserW - 350) / 2,
+                top: (intBrowserH - 180) / 2
+            });
+
+            var GiftControl04 = '<p style="text-align:center;font-size:16px;">禮物兌換券將email至您的信箱，敬請查收！</p><div class="notice_backhomeBTN"></div>'
+            $('#notice3-4 .notice_title').text('收信拿禮物券！');
+            $('#notice3-4 .notice_body').html(GiftControl04);
+        });
+
+        //控制5組
+        $('#notice3-5 .notice_ok').click(function(){
+            $('#notice3-5').css({
+                width: '350px',
+                height: '480px',
+                left: (intBrowserW - 350) / 2,
+                top: (intBrowserH - 530) / 2
+            });
+
+            var GiftControl05_Lottery100 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/glass_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/glass_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_100.png);"></div></div></div><div class="GiftInfo_layout"><div style="text-align:center;color: #fff;font-weight:bold;font-size:20px;">市價$100</div><div style="text-align:center;color: #fff;font-size:16px;margin-top:5px;">LUACRIS<br/>布根地紅酒杯</div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">禮物兌換券將email至您的信箱，敬請查收！</p>'
+
+            var GiftControl05_Lottery500 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/glass_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/glass_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/glass_500.png);"></div></div></div><div class="GiftInfo_layout"><div style="text-align:center;color: #fff;font-size:20px;">市價$500</div><div style="text-align:center;color: #fff;font-size:16px;margin-top:5px;">LUIGI BORMIOLI<br/>頂級系列紅酒杯</div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">禮物兌換券將email至您的信箱，敬請查收！</p>'
+
+            $('#notice3-5 .notice_title').text('收信拿禮物券！');
+            $('#notice3-5 .notice_body').html(GiftControl05_Lottery500);
+            setTimeout(function(){
+                $('.animate_box').css({
+                        'animation-name':'marquee',
+                        'animation-duration':'5s',
+                        'animation-iteration-count':'1',
+                        'animation-timing-function': 'ease-out'
+                });
+                setTimeout(function(){
+                    $('.GiftInfo_layout').fadeIn('slow');
+                },3000);
+            },3000);
+        });
+
+        //控制6組
+        $('#notice3-6 .notice_keepit').click(function(){
+            $('#notice3-6').css({
+                width: '350px',
+                height: '180px',
+                left: (intBrowserW - 350) / 2,
+                top: (intBrowserH - 180) / 2
+            });
+
+            var GiftControl06 = '<p style="text-align:center;font-size:16px;">禮物兌換券將email至您的信箱，敬請查收！</p><div class="notice_backhomeBTN"></div>'
+            $('#notice3-6 .notice_title').text('收信拿折價券！');
+            $('#notice3-6 .notice_body').html(GiftControl06);
+        });
+
+        //控制7組
+        $('#notice3-7 .notice_ok').click(function(){
+            $('#notice3-7').css({
+                width: '350px',
+                height: '480px',
+                left: (intBrowserW - 350) / 2,
+                top: (intBrowserH - 530) / 2
+            });
+
+            var GiftControl07_Lottery100 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/ticket_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee cash"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/ticket_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_100.png);"></div></div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">現金折價券將email至您的信箱，敬請查收！</p>'
+
+            var GiftControl07_Lottery500 = '<div class="ticket_layout"><div class="one_ticket" style="background-image: url(images/NTU/ticket_empty.png);margin-left:calc((100% - 170px)/2);position:relative;"><div class="marquee cash"><div class="animate_box"><div class="one_glass" style="background-image:url(images/NTU/ticket_500.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_100.png);"></div><div class="one_glass" style="background-image:url(images/NTU/ticket_500.png);"></div></div></div></div></div><p style="text-align:center;font-size:16px;margin-top:20px;">現金折價券將email至您的信箱，敬請查收！</p>'
+
+            $('#notice3-7 .notice_title').text('收信拿折價券！');
+            $('#notice3-7 .notice_body').html(GiftControl07_Lottery100);
+            setTimeout(function(){
+                $('.animate_box').css({
+                        'animation-name':'marquee',
+                        'animation-duration':'5s',
+                        'animation-iteration-count':'1',
+                        'animation-timing-function': 'ease-out'
+                });
+            },3000);
+        });
+        
 });
 </script>
 
@@ -230,6 +517,132 @@ $(function(){
    	 </div>
 </div>
 <!-- 資料已送出視窗 end --> 
+
+<!-- 資料已送出視窗(台大實驗2組-選擇是否冒險) start --> 
+<div id="notice3-2" class="notice_BG" style="width:490px;display:none;">
+     <div class="notice_title_layout">
+    	<div class="notice_title">還差一步！</div>
+     	<div class="notice_title_closeBTN" onclick="Wops('notice3-2')"></div>
+     	<div class="CLEAR"></div>
+    </div> 
+   	 <div class="notice_body">
+   		<p style="text-align:center;font-weight:bold;font-size:16px;">請收Email完成付款。</p>
+   		<div style="width:100%;height: 1px;background-color: #cccccc;margin:10px 0;"></div>
+   		<p style="text-align:center;font-size:16px;">謝謝您選擇在iCheers愛酒窩消費！</p>
+   		<p style="text-align:center;font-size:16px;">我們企畫了通通有獎的開春小遊戲，僅需時5秒，有興趣嗎？</p>
+     	<div class="notice_ok" style="margin-bottom: 5px;"></div>
+     	<div style="font-size:13px; color: #999999;text-decoration: underline;cursor: pointer;text-align: center;">沒興趣</div>
+   	 </div>
+</div>
+<!-- 資料已送出視窗(台大實驗2組-選擇是否冒險) end --> 
+
+<!-- 資料已送出視窗(台大實驗3組-選擇是否冒險現金) start --> 
+<div id="notice3-3" class="notice_BG" style="width:490px;display:none;">
+     <div class="notice_title_layout">
+        <div class="notice_title">還差一步！</div>
+        <div class="notice_title_closeBTN" onclick="Wops('notice3-3')"></div>
+        <div class="CLEAR"></div>
+    </div> 
+     <div class="notice_body">
+        <p style="text-align:center;font-weight:bold;font-size:16px;">請收Email完成付款。</p>
+        <div style="width:100%;height: 1px;background-color: #cccccc;margin:10px 0;"></div>
+        <p style="text-align:center;font-size:16px;">謝謝您選擇在iCheers愛酒窩消費！</p>
+        <p style="text-align:center;font-size:16px;">我們企畫了通通有獎的開春小遊戲，僅需時5秒，有興趣嗎？</p>
+        <div class="notice_ok" style="margin-bottom: 5px;"></div>
+        <div style="font-size:13px; color: #999999;text-decoration: underline;cursor: pointer;text-align: center;">沒興趣</div>
+     </div>
+</div>
+<!-- 資料已送出視窗(台大實驗3組-選擇是否冒險現金) end --> 
+
+<!-- 資料已送出視窗(台大實驗4組-直接送禮物) start --> 
+<div id="notice3-4" class="notice_BG" style="width:450px;display:none;">
+     <div class="notice_title_layout">
+        <div class="notice_title">還差一步！</div>
+        <div class="notice_title_closeBTN" onclick="Wops('notice3-4')"></div>
+        <div class="CLEAR"></div>
+    </div> 
+     <div class="notice_body">
+        <p style="text-align:center;font-weight:bold;font-size:16px;">請收Email完成付款。</p>
+        <div style="width:100%;height: 1px;background-color: #cccccc;margin:10px 0;"></div>
+        <p style="text-align:center;font-size:16px;">謝謝您選擇在iCheers愛酒窩消費！</p>
+        <p style="text-align:center;font-size:16px;">隨訂單致贈開春好康：</p>
+        <div class="ticket_layout">
+            <div class="one_ticket" style="background-image: url(images/NTU/300_glass.png);margin-left:calc((100% - 170px)/2);position:relative;">
+            </div>
+        </div>
+        <div class="notice_keepit" style="margin-bottom: 5px;"></div>
+        <div style="font-size:13px; color: #999999;text-decoration: underline;cursor: pointer;text-align: center;">沒興趣</div>
+     </div>
+</div>
+<!-- 資料已送出視窗(台大實驗4組-直接送禮物) end --> 
+
+<!-- 資料已送出視窗(台大實驗5組-直接抽獎) start --> 
+<div id="notice3-5" class="notice_BG" style="width:450px;display:none;">
+     <div class="notice_title_layout">
+        <div class="notice_title">還差一步！</div>
+        <div class="notice_title_closeBTN" onclick="Wops('notice3-5')"></div>
+        <div class="CLEAR"></div>
+    </div> 
+     <div class="notice_body">
+        <p style="text-align:center;font-weight:bold;font-size:16px;">請收Email完成付款。</p>
+        <div style="width:100%;height: 1px;background-color: #cccccc;margin:10px 0;"></div>
+        <p style="text-align:center;font-size:16px;">謝謝您選擇在iCheers愛酒窩消費！</p>
+        <p style="text-align:center;font-size:16px;">隨訂單有機會參加開春抽獎，帶走下方其中一張兌換券</p>
+        <p style="text-align:center;font-size:16px;">僅需時3秒，有興趣嗎？</p>
+        <div class="ticket_layout">
+            <div class="one_ticket" style="background-image: url(images/NTU/100_glass.png);margin-left:17px;"></div>
+            <div class="one_ticket" style="background-image: url(images/NTU/500_glass.png);margin-left:15px;"></div>
+        </div>
+        <div class="notice_ok" style="margin-bottom: 5px;"></div>
+        <div style="font-size:13px; color: #999999;text-decoration: underline;cursor: pointer;text-align: center;">沒興趣</div>
+     </div>
+</div>
+<!-- 資料已送出視窗(台大實驗5組-直接抽獎) end --> 
+
+<!-- 資料已送出視窗(台大實驗6組-直接送錢) start --> 
+<div id="notice3-6" class="notice_BG" style="width:450px;display:none;">
+     <div class="notice_title_layout">
+        <div class="notice_title">還差一步！</div>
+        <div class="notice_title_closeBTN" onclick="Wops('notice3-6')"></div>
+        <div class="CLEAR"></div>
+    </div> 
+     <div class="notice_body">
+        <p style="text-align:center;font-weight:bold;font-size:16px;">請收Email完成付款。</p>
+        <div style="width:100%;height: 1px;background-color: #cccccc;margin:10px 0;"></div>
+        <p style="text-align:center;font-size:16px;">謝謝您選擇在iCheers愛酒窩消費！</p>
+        <p style="text-align:center;font-size:16px;">隨訂單致贈開春好康：</p>
+        <div class="ticket_layout">
+            <div class="one_ticket" style="background-image: url(images/NTU/300_ticket.png);margin-left:calc((100% - 170px)/2);position:relative;">
+            </div>
+        </div>
+        <div class="notice_keepit" style="margin-bottom: 5px;"></div>
+        <div style="font-size:13px; color: #999999;text-decoration: underline;cursor: pointer;text-align: center;">沒興趣</div>
+     </div>
+</div>
+<!-- 資料已送出視窗(台大實驗6組-直接送錢) end -->
+
+<!-- 資料已送出視窗(台大實驗7組-直接抽獎-錢) start --> 
+<div id="notice3-7" class="notice_BG" style="width:450px;display:none;">
+     <div class="notice_title_layout">
+        <div class="notice_title">還差一步！</div>
+        <div class="notice_title_closeBTN" onclick="Wops('notice3-7')"></div>
+        <div class="CLEAR"></div>
+    </div> 
+     <div class="notice_body">
+        <p style="text-align:center;font-weight:bold;font-size:16px;">請收Email完成付款。</p>
+        <div style="width:100%;height: 1px;background-color: #cccccc;margin:10px 0;"></div>
+        <p style="text-align:center;font-size:16px;">謝謝您選擇在iCheers愛酒窩消費！</p>
+        <p style="text-align:center;font-size:16px;">隨訂單有機會參加開春抽獎，帶走下方其中一張折價券</p>
+        <p style="text-align:center;font-size:16px;">僅需時3秒，有興趣嗎？</p>
+        <div class="ticket_layout">
+            <div class="one_ticket" style="background-image: url(images/NTU/100_ticket.png);margin-left:17px;"></div>
+            <div class="one_ticket" style="background-image: url(images/NTU/500_ticket.png);margin-left:15px;"></div>
+        </div>
+        <div class="notice_ok" style="margin-bottom: 5px;"></div>
+        <div style="font-size:13px; color: #999999;text-decoration: underline;cursor: pointer;text-align: center;">沒興趣</div>
+     </div>
+</div>
+<!-- 資料已送出視窗(台大實驗7組-直接抽獎-錢) end -->  
 
 <!-- eCoupon優惠視窗 start -->
     <div id="notice6" class="notice_BG" style="width:450px;height:260px;display:none;">
@@ -734,10 +1147,10 @@ $(function(){
 			</div>
 			<h3>
 				<input name="payment" type="radio"  id="ATM" value="ATM" class="textarea1" />
-			匯款</h3>
+			匯款（請於24小時內完成付款，逾期將取消訂單。)</h3>
 			<h3>
 				<input name="payment" type="radio"  id="fax" value="fax" class="textarea1" />
-				傳真刷卡單</h3>
+				傳真刷卡單（請於24小時內完成付款，逾期將取消訂單。)</h3>
 			<h3>
 				<input name="payment" type="radio" id="Deliver" value="Deliver" checked="checked" />
 				宅配貨到付款（現金）
@@ -1024,7 +1437,7 @@ $(function(){
 	 
 		 <div class="BTN_CONSULT" >
          	<br />
-            <button value="確認送出" class="btn_send"  onclick="Pops('#notice3-2')" />	
+            <button value="確認送出" class="btn_send"  onclick="Pops('#notice3-7')" />	
 			 
 		 </div>
 </div>
