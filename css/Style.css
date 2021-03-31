@@ -3212,10 +3212,9 @@ img.HOT8_NO {
     height: 40px;
     border-radius: 50%;
     background-color: #fff;
-    background-image: url(../images/icon/icon_tracking_large.png);
+    background-image: url(../images/icon/icon_tracking_large2_gray.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center top;
     position: absolute;
     left: 0;
     bottom: 43px;
@@ -3223,12 +3222,11 @@ img.HOT8_NO {
 }
 
 .Result .Wine_Name .tracking:hover{
-    cursor: pointer;
-    /*background-position: center bottom;*/
+    cursor: pointer;  
 }
 
 .Result .Wine_Name .tracking.active{
-    background-position: center bottom;
+    background-image: url(../images/icon/icon_tracking_large2_pink.png);
     animation-name: TrackingBtn;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
@@ -3409,7 +3407,6 @@ img.HOT8_NO {
     left: -7px;
     top: 7px;
     cursor: pointer;
-    display: none;
 }
 
 .WineInformation li.List_Year .tracking_icon:hover{
@@ -4706,11 +4703,27 @@ h5.Focus {
 
     .wine_detail_wineinfo_layout h1 {
         width: 565px;
+        height: 23px;
         font-size: 18px;
+        line-height: 23px;
         font-family: Arial, Helvetica, sans-serif;
         color: #999;
         margin-top: 5px;
         font-weight: normal;
+    }
+
+    .wine_detail_wineinfo_layout .btn_trackinglist_singleyear{
+        width: 21px;
+        height: 17px;
+        display: inline-block;
+        background-image: url(../images/icon/icon_tracking_large3_gray.png);
+    }
+
+    .wine_detail_wineinfo_layout .btn_trackinglist_singleyear.active{
+        background-image: url(../images/icon/icon_tracking_large3_pink.png);
+        animation-name: TrackingBtn;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
     }
     /*20161202 Roger 調整寬度 end*/
 
@@ -5100,8 +5113,6 @@ ul.Detail {
             }
 
             @keyframes TrackingBtn {
-                /*0%{transform: rotateY(0deg);}
-                100%{transform: rotateY(360deg);}*/
                 0%{transform: scale(1);}
                 20%{transform: scale(0.9);}
                 75%{transform: scale(1.1);}
@@ -5113,7 +5124,7 @@ ul.Detail {
                 /*background-position: center bottom;*/
                 background-image: url(../images/icon/icon_tracking_large2_pink.png); 
                 animation-name: TrackingBtn;
-                animation-duration: 0.3s;
+                animation-duration: 0.5s;
                 animation-iteration-count: 1;
             }    
 
@@ -13688,19 +13699,16 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
 
 /*追蹤清單下架商品*/
 
-.Result .NotSell .Wine_Name h1, .Result .NotSell .Wine_Name h2,.Result .NotSell .Wine_Name h3{
+.Result .Wine_Name h1.NotSell, .Result .Wine_Name h2.NotSell,.Result .Wine_Name h3.NotSell,.Result .Wine_Name .WinePage.NotSell{
     opacity: 0.4;
 }
 
-.NotSell .WineInformation_layout{
+.WineInformation_layout .WineInformation.NotSell{
     opacity: 0.4;
 }
 
-.Result .NotSell .Wine_Name .WinePage{
-    opacity: 0.4;
-}
 
-.NotSell .NotSellTextBox{
+.NotSellTextBox{
     width: 100%;
     height: 35px;
     box-sizing: border-box;

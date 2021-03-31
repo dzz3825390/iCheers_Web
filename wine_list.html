@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 
 
-<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
@@ -86,30 +86,10 @@ ddsmoothmenu.init({
 
         $('.FooterMenu').css('margin-left',FooterPositionX);
 
-        //紀錄一下點哪瓶酒
-        var WineLength
-        //active按鈕
         $('.Result .Wine_Name .tracking').click(function(){
-            WineLength = $(this).parent().parent().index();
-
             $(this).toggleClass('active');
-            Pops(notice_TrackWine);
-
-            /*if ($(this).hasClass('active')){
-               
-              $(this).parent().next().find('li .tracking_icon').css('display','block');
-            }*/
         });
 
-        //開啟單一年份選單
-        $('.notice_btn_tracksingle').click(function(){
-            $('.Result .ALL').eq(WineLength).find('li .tracking_icon').css('display','block');
-            Wops('notice_TrackWine');
-        });
-
-        $('.notice_btn_trackall').click(function(){
-            Wops('notice_TrackWine');
-        });
         
         //單一年份active按鈕
         $('.WineInformation .List_Year .tracking_icon').click(function(){
